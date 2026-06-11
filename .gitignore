@@ -42,3 +42,9 @@ desktop.ini
 # Temporary
 *.tmp
 *.log
+
+# KiCad cache / history
+*.kicad_prl
+.history/
+kicad/build_kicad.py
+kicad/build_schematic_svg.py

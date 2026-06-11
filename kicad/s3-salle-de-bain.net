@@ -1,251 +1,2235 @@
-(export (version "E")
-  (design
-    (source "build_kicad.py")
-    (date "2026-06-11")
-    (tool "KiCad 8")
-  )
-  (components
-    (comp (ref "U1")
-      (value "ESP32-S3-DevKitC-1")
-      (footprint "Module:ESP32-S3-DevKitC-1")
-    )
-    (comp (ref "U2")
-      (value "PCM5102")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
-    )
-    (comp (ref "U3")
-      (value "PAM8403")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
-    )
-    (comp (ref "U4")
-      (value "INMP441 (MEMS I2S)")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
-    )
-    (comp (ref "DS1")
-      (value "WS2812B Ring 12 LEDs")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
-    )
-    (comp (ref "SW1")
-      (value "Encodeur Alps EC11")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
-    )
-    (comp (ref "SW2")
-      (value "Switch mute SPDT")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
-    )
-    (comp (ref "J1")
-      (value "Jack 3.5mm switch detect")
-      (footprint "Connector_Audio:Jack_3.5mm_PJ320E_Vertical")
-    )
-    (comp (ref "Q1")
-      (value "P-MOSFET high-side (AO3401)")
-      (footprint "Package_TO_SOT_SMD:SOT-23")
-    )
-    (comp (ref "U5")
-      (value "AMS1117-3.3 (LDO)")
-      (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
-    )
-    (comp (ref "J2")
-      (value "USB-C 5V input")
-      (footprint "Connector_USB:USB_C_Receptacle_USB2.0_16P")
-    )
-    (comp (ref "F1")
-      (value "Ferrite 600 ohm (rail 5V LED)")
-      (footprint "Inductor_SMD:L_0603_1608Metric")
-    )
-    (comp (ref "TVS1")
-      (value "TVS array USB (USBLC6-2SC6)")
-      (footprint "Package_TO_SOT_SMD:SOT-23-6")
-    )
-    (comp (ref "C1")
-      (value "10uF (decouplage 3V3 ESP32)")
-      (footprint "Capacitor_SMD:C_0805_2012Metric")
-    )
-    (comp (ref "C2")
-      (value "100nF (decouplage 3V3 ESP32)")
-      (footprint "Capacitor_SMD:C_0603_1608Metric")
-    )
-    (comp (ref "C3")
-      (value "10uF (decouplage 5V USB-C)")
-      (footprint "Capacitor_SMD:C_0805_2012Metric")
-    )
-    (comp (ref "C4")
-      (value "10uF (decouplage VIN PCM5102)")
-      (footprint "Capacitor_SMD:C_0805_2012Metric")
-    )
-    (comp (ref "C5")
-      (value "100uF (decouplage 5V ampli)")
-      (footprint "Capacitor_SMD:CP_Elec_5x5.4")
-    )
-    (comp (ref "C6")
-      (value "470uF (decouplage rail LED)")
-      (footprint "Capacitor_SMD:CP_Elec_6.3x5.4")
-    )
-    (comp (ref "R1")
-      (value "10k pullup BTN center (optionnel)")
-      (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (comp (ref "R2")
-      (value "330 ohm serie LED_DIN")
-      (footprint "Resistor_SMD:R_0603_1608Metric")
-    )
-    (comp (ref "HP_L")
-      (value "Haut-parleur L 40mm 4 ohm 3W")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
-    )
-    (comp (ref "HP_R")
-      (value "Haut-parleur R 40mm 4 ohm 3W")
-      (footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
-    )
-  )
-  (nets
-    (net (code "1") (name "+3V3")
-      (node (ref "U1") (pin "16") (pintype "passive"))
-      (node (ref "U2") (pin "1") (pintype "passive"))
-      (node (ref "U2") (pin "10") (pintype "passive"))
-      (node (ref "U4") (pin "1") (pintype "passive"))
-      (node (ref "U5") (pin "2") (pintype "passive"))
-      (node (ref "C1") (pin "1") (pintype "passive"))
-      (node (ref "C2") (pin "1") (pintype "passive"))
-      (node (ref "C4") (pin "1") (pintype "passive"))
-      (node (ref "R1") (pin "2") (pintype "passive"))
-    )
-    (net (code "2") (name "+5V")
-      (node (ref "U1") (pin "15") (pintype "passive"))
-      (node (ref "U3") (pin "1") (pintype "passive"))
-      (node (ref "Q1") (pin "S") (pintype "passive"))
-      (node (ref "U5") (pin "3") (pintype "passive"))
-      (node (ref "J2") (pin "1") (pintype "passive"))
-      (node (ref "F1") (pin "1") (pintype "passive"))
-      (node (ref "TVS1") (pin "1") (pintype "passive"))
-      (node (ref "C3") (pin "1") (pintype "passive"))
-      (node (ref "C5") (pin "1") (pintype "passive"))
-    )
-    (net (code "3") (name "+5V_LED")
-      (node (ref "DS1") (pin "1") (pintype "passive"))
-      (node (ref "Q1") (pin "D") (pintype "passive"))
-      (node (ref "F1") (pin "2") (pintype "passive"))
-      (node (ref "C6") (pin "1") (pintype "passive"))
-    )
-    (net (code "4") (name "AMP_EN")
-      (node (ref "U1") (pin "14") (pintype "passive"))
-      (node (ref "U3") (pin "3") (pintype "passive"))
-    )
-    (net (code "5") (name "AUDIO_L")
-      (node (ref "U2") (pin "11") (pintype "passive"))
-      (node (ref "U3") (pin "4") (pintype "passive"))
-      (node (ref "J1") (pin "T") (pintype "passive"))
-    )
-    (net (code "6") (name "AUDIO_R")
-      (node (ref "U2") (pin "12") (pintype "passive"))
-      (node (ref "U3") (pin "5") (pintype "passive"))
-      (node (ref "J1") (pin "R") (pintype "passive"))
-    )
-    (net (code "7") (name "BTN_CENTER")
-      (node (ref "U1") (pin "1") (pintype "passive"))
-      (node (ref "SW1") (pin "4") (pintype "passive"))
-      (node (ref "R1") (pin "1") (pintype "passive"))
-    )
-    (net (code "8") (name "DAC_BCK")
-      (node (ref "U1") (pin "10") (pintype "passive"))
-      (node (ref "U2") (pin "3") (pintype "passive"))
-    )
-    (net (code "9") (name "DAC_DIN")
-      (node (ref "U1") (pin "11") (pintype "passive"))
-      (node (ref "U2") (pin "4") (pintype "passive"))
-    )
-    (net (code "10") (name "DAC_LRCK")
-      (node (ref "U1") (pin "9") (pintype "passive"))
-      (node (ref "U2") (pin "5") (pintype "passive"))
-    )
-    (net (code "11") (name "EN")
-      (node (ref "U1") (pin "18") (pintype "passive"))
-      (node (ref "TVS1") (pin "3") (pintype "passive"))
-    )
-    (net (code "12") (name "ENC_A")
-      (node (ref "U1") (pin "6") (pintype "passive"))
-      (node (ref "SW1") (pin "1") (pintype "passive"))
-    )
-    (net (code "13") (name "ENC_B")
-      (node (ref "U1") (pin "8") (pintype "passive"))
-      (node (ref "SW1") (pin "3") (pintype "passive"))
-    )
-    (net (code "14") (name "GND")
-      (node (ref "U1") (pin "17") (pintype "passive"))
-      (node (ref "U2") (pin "2") (pintype "passive"))
-      (node (ref "U2") (pin "6") (pintype "passive"))
-      (node (ref "U2") (pin "7") (pintype "passive"))
-      (node (ref "U2") (pin "8") (pintype "passive"))
-      (node (ref "U2") (pin "9") (pintype "passive"))
-      (node (ref "U3") (pin "2") (pintype "passive"))
-      (node (ref "U4") (pin "2") (pintype "passive"))
-      (node (ref "U4") (pin "3") (pintype "passive"))
-      (node (ref "DS1") (pin "2") (pintype "passive"))
-      (node (ref "SW1") (pin "2") (pintype "passive"))
-      (node (ref "SW1") (pin "5") (pintype "passive"))
-      (node (ref "SW2") (pin "2") (pintype "passive"))
-      (node (ref "J1") (pin "S") (pintype "passive"))
-      (node (ref "J1") (pin "G") (pintype "passive"))
-      (node (ref "U5") (pin "1") (pintype "passive"))
-      (node (ref "J2") (pin "2") (pintype "passive"))
-      (node (ref "TVS1") (pin "2") (pintype "passive"))
-      (node (ref "C1") (pin "2") (pintype "passive"))
-      (node (ref "C2") (pin "2") (pintype "passive"))
-      (node (ref "C3") (pin "2") (pintype "passive"))
-      (node (ref "C4") (pin "2") (pintype "passive"))
-      (node (ref "C5") (pin "2") (pintype "passive"))
-      (node (ref "C6") (pin "2") (pintype "passive"))
-    )
-    (net (code "15") (name "JACK_DET")
-      (node (ref "U1") (pin "7") (pintype "passive"))
-      (node (ref "J1") (pin "D") (pintype "passive"))
-    )
-    (net (code "16") (name "LED_DIN")
-      (node (ref "U1") (pin "12") (pintype "passive"))
-      (node (ref "DS1") (pin "3") (pintype "passive"))
-      (node (ref "R2") (pin "1") (pintype "passive"))
-    )
-    (net (code "17") (name "LED_DIN_RAW")
-      (node (ref "R2") (pin "2") (pintype "passive"))
-    )
-    (net (code "18") (name "LED_DOUT")
-      (node (ref "DS1") (pin "4") (pintype "passive"))
-    )
-    (net (code "19") (name "LED_PWR_EN")
-      (node (ref "U1") (pin "13") (pintype "passive"))
-      (node (ref "Q1") (pin "G") (pintype "passive"))
-    )
-    (net (code "20") (name "MIC_BCLK")
-      (node (ref "U1") (pin "4") (pintype "passive"))
-      (node (ref "U4") (pin "5") (pintype "passive"))
-    )
-    (net (code "21") (name "MIC_DIN")
-      (node (ref "U1") (pin "5") (pintype "passive"))
-      (node (ref "U4") (pin "6") (pintype "passive"))
-    )
-    (net (code "22") (name "MIC_LRCLK")
-      (node (ref "U1") (pin "3") (pintype "passive"))
-      (node (ref "U4") (pin "4") (pintype "passive"))
-    )
-    (net (code "23") (name "MUTE_SW")
-      (node (ref "U1") (pin "2") (pintype "passive"))
-      (node (ref "SW2") (pin "1") (pintype "passive"))
-    )
-    (net (code "24") (name "SPK_L+")
-      (node (ref "U3") (pin "6") (pintype "passive"))
-      (node (ref "HP_L") (pin "1") (pintype "passive"))
-    )
-    (net (code "25") (name "SPK_L-")
-      (node (ref "U3") (pin "7") (pintype "passive"))
-      (node (ref "HP_L") (pin "2") (pintype "passive"))
-    )
-    (net (code "26") (name "SPK_R+")
-      (node (ref "U3") (pin "8") (pintype "passive"))
-      (node (ref "HP_R") (pin "1") (pintype "passive"))
-    )
-    (net (code "27") (name "SPK_R-")
-      (node (ref "U3") (pin "9") (pintype "passive"))
-      (node (ref "HP_R") (pin "2") (pintype "passive"))
-    )
-  )
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\hbenm\\Documents\\s3-salle-de-bain\\kicad\\s3-salle-de-bain.kicad_sch")
+		(date "2026-06-11T18:22:49")
+		(tool "Eeschema 10.0.2")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "S3 Salle de Bain - Voice Assistant ESP32-S3")
+				(company "domokami / Hanafi BENMESBAH")
+				(rev "v3")
+				(date "2026-06-11")
+				(source "s3-salle-de-bain.kicad_sch")
+				(comment
+					(number "1")
+					(value "Schema cable depuis s3-salle-de-bain.yaml")
+				)
+				(comment
+					(number "2")
+					(value "Power rails : +3V3 (LDO AMS1117), +5V (USB-C), +5V_LED (gated GPIO9)")
+				)
+				(comment
+					(number "3")
+					(value "27 nets - 14 composants principaux")
+				)
+				(comment
+					(number "4")
+					(value "https://github.com/hanafi09/s3-salle-de-bain")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "DS1")
+			(value "WS2812 Ring x12")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "DS1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0fd9fff5-3cc0-455f-a649-9d25dc0c02c6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "HP_L1")
+			(value "HP gauche 40mm 4R 3W")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "HP_L")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e217890b-9ae7-4532-a521-a5409399245e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "HP_R1")
+			(value "HP droit 40mm 4R 3W")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "HP_R")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d5ef3394-b5e8-41e8-a5c7-d1146921c05d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "Jack 3.5mm")
+			(footprint "Connector_Audio:Jack_3.5mm_PJ320E_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_Audio:Jack_3.5mm_PJ320E_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "J1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cf8f3786-6b82-463b-8923-983f61d21335")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "T")
+						)
+						(pin
+							(num "R")
+						)
+						(pin
+							(num "S")
+						)
+						(pin
+							(num "D")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "USB-C")
+			(footprint "Connector_USB:USB_C_Receptacle_USB2.0_16P")
+			(fields
+				(field
+					(name "Footprint") "Connector_USB:USB_C_Receptacle_USB2.0_16P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "J2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "82f5f2d7-a209-44bc-b19d-24b6e5baef91")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q1")
+			(value "AO3401 P-MOS")
+			(footprint "Package_TO_SOT_SMD:SOT-23")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "Q1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3ec1b3ea-bb3b-4435-bfff-ee598221d9d4")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "G")
+						)
+						(pin
+							(num "S")
+						)
+						(pin
+							(num "D")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "330R")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "R2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "641fbc67-e898-4d61-826c-a625c0b065b6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW1")
+			(value "Encodeur EC11")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "SW1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "32936761-d0dc-4502-ae05-4cc47b946c80")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "SW2")
+			(value "Switch mute SPDT")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "SW2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f546dad0-45aa-4e2d-bb52-e8c0f5339e81")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "ESP32-S3-DevKitC-1")
+			(footprint "Module:ESP32-S3-DevKitC-1")
+			(fields
+				(field
+					(name "Footprint") "Module:ESP32-S3-DevKitC-1")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "U1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6e50c906-3c4b-47e1-a70d-90d774a1d60c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "PCM5102")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "U2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cc0649e8-4c1a-4324-a4c7-9654e6eba3e8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "PAM8403")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "U3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "aa0ee0fd-dad4-48d2-9dab-d99063a64126")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U4")
+			(value "INMP441")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "U4")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "31664164-796e-40b3-b19f-a57d26ad74d8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U5")
+			(value "AMS1117-3.3")
+			(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Local")
+				(part "U5")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "s3-salle-de-bain")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f4b32d9a-5b9f-465d-a184-7e92e0f6d504")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Local")
+			(part "DS1")
+			(fields
+				(field
+					(name "Reference") "DS1")
+				(field
+					(name "Value") "WS2812 Ring x12")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VCC")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "DIN")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "HP_L")
+			(fields
+				(field
+					(name "Reference") "HP_L")
+				(field
+					(name "Value") "HP gauche 40mm 4R 3W")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "-")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "HP_R")
+			(fields
+				(field
+					(name "Reference") "HP_R")
+				(field
+					(name "Value") "HP droit 40mm 4R 3W")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "-")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "J1")
+			(fields
+				(field
+					(name "Reference") "J1")
+				(field
+					(name "Value") "Jack 3.5mm")
+				(field
+					(name "Footprint") "Connector_Audio:Jack_3.5mm_PJ320E_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "D")
+					(name "Det")
+					(type "bidirectional")
+				)
+				(pin
+					(num "R")
+					(name "Ring")
+					(type "bidirectional")
+				)
+				(pin
+					(num "S")
+					(name "Sleeve")
+					(type "bidirectional")
+				)
+				(pin
+					(num "T")
+					(name "Tip")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "J2")
+			(fields
+				(field
+					(name "Reference") "J2")
+				(field
+					(name "Value") "USB-C")
+				(field
+					(name "Footprint") "Connector_USB:USB_C_Receptacle_USB2.0_16P")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VBUS")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "Q1")
+			(fields
+				(field
+					(name "Reference") "Q1")
+				(field
+					(name "Value") "AO3401 P-MOS")
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "D")
+					(name "D")
+					(type "bidirectional")
+				)
+				(pin
+					(num "G")
+					(name "G")
+					(type "bidirectional")
+				)
+				(pin
+					(num "S")
+					(name "S")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "R2")
+			(fields
+				(field
+					(name "Reference") "R2")
+				(field
+					(name "Value") "330R")
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "2")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "SW1")
+			(fields
+				(field
+					(name "Reference") "SW1")
+				(field
+					(name "Value") "Encodeur EC11")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "A")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "C")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "B")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "BTN_A")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "BTN_B")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "SW2")
+			(fields
+				(field
+					(name "Reference") "SW2")
+				(field
+					(name "Value") "Switch mute SPDT")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "COM")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "NO")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "U1")
+			(fields
+				(field
+					(name "Reference") "U1")
+				(field
+					(name "Value") "ESP32-S3-DevKitC-1")
+				(field
+					(name "Footprint") "Module:ESP32-S3-DevKitC-1")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GPIO1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GPIO2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "GPIO4")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "GPIO5")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "GPIO11")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "GPIO16")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "GPIO17")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "GPIO18")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "GPIO7")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "GPIO8")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "GPIO10")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "GPIO21")
+					(type "bidirectional")
+				)
+				(pin
+					(num "13")
+					(name "GPIO9")
+					(type "bidirectional")
+				)
+				(pin
+					(num "14")
+					(name "GPIO47")
+					(type "bidirectional")
+				)
+				(pin
+					(num "15")
+					(name "3V3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "16")
+					(name "5V")
+					(type "bidirectional")
+				)
+				(pin
+					(num "17")
+					(name "GND")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "U2")
+			(fields
+				(field
+					(name "Reference") "U2")
+				(field
+					(name "Value") "PCM5102")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "BCK")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "DIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "LRCK")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "SCK")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "FMT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "FLT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "DEMP")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "XSMT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "LOUT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "ROUT")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "U3")
+			(fields
+				(field
+					(name "Reference") "U3")
+				(field
+					(name "Value") "PAM8403")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VCC")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "SHDN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "LIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "RIN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "LOUT+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "ROUT+")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "U4")
+			(fields
+				(field
+					(name "Reference") "U4")
+				(field
+					(name "Value") "INMP441")
+				(field
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VDD")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "L/R")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "WS")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "SCK")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "SD")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Local")
+			(part "U5")
+			(fields
+				(field
+					(name "Reference") "U5")
+				(field
+					(name "Value") "AMS1117-3.3")
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "VOUT")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "VIN")
+					(type "bidirectional")
+				)
+			)
+		)
+	)
+	(libraries)
+	(nets
+		(net
+			(code "10")
+			(name "unconnected-(DS1-DIN-Pad3)")
+			(class "Default")
+			(node
+				(ref "DS1")
+				(pin "3")
+				(pinfunction "DIN_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "11")
+			(name "unconnected-(DS1-GND-Pad2)")
+			(class "Default")
+			(node
+				(ref "DS1")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "12")
+			(name "unconnected-(DS1-VCC-Pad1)")
+			(class "Default")
+			(node
+				(ref "DS1")
+				(pin "1")
+				(pinfunction "VCC_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "13")
+			(name "unconnected-(HP_L1-+-Pad1)")
+			(class "Default")
+			(node
+				(ref "HP_L1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "14")
+			(name "unconnected-(HP_L1---Pad2)")
+			(class "Default")
+			(node
+				(ref "HP_L1")
+				(pin "2")
+				(pinfunction "-_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "15")
+			(name "unconnected-(HP_R1-+-Pad1)")
+			(class "Default")
+			(node
+				(ref "HP_R1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "16")
+			(name "unconnected-(HP_R1---Pad2)")
+			(class "Default")
+			(node
+				(ref "HP_R1")
+				(pin "2")
+				(pinfunction "-_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "17")
+			(name "unconnected-(J1-Det-PadD)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "D")
+				(pinfunction "Det_D")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "18")
+			(name "unconnected-(J1-Ring-PadR)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "R")
+				(pinfunction "Ring_R")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "19")
+			(name "unconnected-(J1-Sleeve-PadS)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "S")
+				(pinfunction "Sleeve_S")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "20")
+			(name "unconnected-(J1-Tip-PadT)")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "T")
+				(pinfunction "Tip_T")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "21")
+			(name "unconnected-(J2-GND-Pad2)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "22")
+			(name "unconnected-(J2-VBUS-Pad1)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "VBUS_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "23")
+			(name "unconnected-(Q1-PadD)")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "D")
+				(pinfunction "D_D")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "24")
+			(name "unconnected-(Q1-PadG)")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "G")
+				(pinfunction "G_G")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "25")
+			(name "unconnected-(Q1-PadS)")
+			(class "Default")
+			(node
+				(ref "Q1")
+				(pin "S")
+				(pinfunction "S_S")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "26")
+			(name "unconnected-(R2-Pad1)")
+			(class "Default")
+			(node
+				(ref "R2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "27")
+			(name "unconnected-(R2-Pad2)")
+			(class "Default")
+			(node
+				(ref "R2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "28")
+			(name "unconnected-(SW1-A-Pad1)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "1")
+				(pinfunction "A_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "29")
+			(name "unconnected-(SW1-B-Pad3)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "3")
+				(pinfunction "B_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "30")
+			(name "unconnected-(SW1-BTN_A-Pad4)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "4")
+				(pinfunction "BTN_A_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "31")
+			(name "unconnected-(SW1-BTN_B-Pad5)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "5")
+				(pinfunction "BTN_B_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(SW1-C-Pad2)")
+			(class "Default")
+			(node
+				(ref "SW1")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(SW2-COM-Pad1)")
+			(class "Default")
+			(node
+				(ref "SW2")
+				(pin "1")
+				(pinfunction "COM_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(SW2-NO-Pad2)")
+			(class "Default")
+			(node
+				(ref "SW2")
+				(pin "2")
+				(pinfunction "NO_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "35")
+			(name "unconnected-(U1-3V3-Pad15)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "3V3_15")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(U1-5V-Pad16)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "5V_16")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(U1-GND-Pad17)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "17")
+				(pinfunction "GND_17")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(U1-GPIO1-Pad1)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "GPIO1_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(U1-GPIO2-Pad2)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "GPIO2_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "40")
+			(name "unconnected-(U1-GPIO4-Pad3)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "GPIO4_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "41")
+			(name "unconnected-(U1-GPIO5-Pad4)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "GPIO5_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "42")
+			(name "unconnected-(U1-GPIO7-Pad9)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "GPIO7_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "43")
+			(name "unconnected-(U1-GPIO8-Pad10)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "GPIO8_10")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "44")
+			(name "unconnected-(U1-GPIO9-Pad13)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "GPIO9_13")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "45")
+			(name "unconnected-(U1-GPIO10-Pad11)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "GPIO10_11")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "46")
+			(name "unconnected-(U1-GPIO11-Pad5)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "GPIO11_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(U1-GPIO16-Pad6)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "GPIO16_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "48")
+			(name "unconnected-(U1-GPIO17-Pad7)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "GPIO17_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "49")
+			(name "unconnected-(U1-GPIO18-Pad8)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "GPIO18_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "50")
+			(name "unconnected-(U1-GPIO21-Pad12)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "GPIO21_12")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "51")
+			(name "unconnected-(U1-GPIO47-Pad14)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "GPIO47_14")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "52")
+			(name "unconnected-(U2-BCK-Pad3)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "BCK_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "53")
+			(name "unconnected-(U2-DEMP-Pad9)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "9")
+				(pinfunction "DEMP_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "54")
+			(name "unconnected-(U2-DIN-Pad4)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "DIN_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "55")
+			(name "unconnected-(U2-FLT-Pad8)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "FLT_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(U2-FMT-Pad7)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "7")
+				(pinfunction "FMT_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "57")
+			(name "unconnected-(U2-GND-Pad2)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "58")
+			(name "unconnected-(U2-LOUT-Pad11)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "11")
+				(pinfunction "LOUT_11")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "59")
+			(name "unconnected-(U2-LRCK-Pad5)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "LRCK_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "60")
+			(name "unconnected-(U2-ROUT-Pad12)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "12")
+				(pinfunction "ROUT_12")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "61")
+			(name "unconnected-(U2-SCK-Pad6)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "6")
+				(pinfunction "SCK_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "62")
+			(name "unconnected-(U2-VIN-Pad1)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "VIN_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "63")
+			(name "unconnected-(U2-XSMT-Pad10)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "10")
+				(pinfunction "XSMT_10")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "64")
+			(name "unconnected-(U3-GND-Pad2)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "65")
+			(name "unconnected-(U3-LIN-Pad4)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "LIN_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "66")
+			(name "unconnected-(U3-LOUT+-Pad6)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "LOUT+_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "67")
+			(name "unconnected-(U3-RIN-Pad5)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "RIN_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "68")
+			(name "unconnected-(U3-ROUT+-Pad7)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "7")
+				(pinfunction "ROUT+_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "69")
+			(name "unconnected-(U3-SHDN-Pad3)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "SHDN_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "70")
+			(name "unconnected-(U3-VCC-Pad1)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "VCC_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "71")
+			(name "unconnected-(U4-GND-Pad2)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "72")
+			(name "unconnected-(U4-L{slash}R-Pad3)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "3")
+				(pinfunction "L/R_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "73")
+			(name "unconnected-(U4-SCK-Pad5)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "5")
+				(pinfunction "SCK_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "74")
+			(name "unconnected-(U4-SD-Pad6)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "6")
+				(pinfunction "SD_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "75")
+			(name "unconnected-(U4-VDD-Pad1)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "VDD_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "76")
+			(name "unconnected-(U4-WS-Pad4)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "4")
+				(pinfunction "WS_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "77")
+			(name "unconnected-(U5-GND-Pad1)")
+			(class "Default")
+			(node
+				(ref "U5")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "78")
+			(name "unconnected-(U5-VIN-Pad3)")
+			(class "Default")
+			(node
+				(ref "U5")
+				(pin "3")
+				(pinfunction "VIN_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "79")
+			(name "unconnected-(U5-VOUT-Pad2)")
+			(class "Default")
+			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "VOUT_2")
+				(pintype "bidirectional")
+			)
+		)
+	)
 )

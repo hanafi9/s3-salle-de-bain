@@ -1,0 +1,25 @@
+Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0)
+
+Copyright (c) 2025 Hanafi BENMESBAH / domokami
+
+This Licence governs the rights to use, copy, modify and distribute the
+documentation of this project, specifically:
+  - docs/S3 Salle de Bain - Rapport Technique v3.pdf
+  - docs/S3 Salle de Bain - Rapport Technique v3.docx
+  - All textual content in this repository (README, comments, etc.)
+
+The full text of the CC-BY-SA-4.0 licence is available at:
+  https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Summary of key obligations:
+  1. Attribution - You must give appropriate credit, provide a link to the
+     licence, and indicate if changes were made.
+  2. ShareAlike - If you remix, transform, or build upon the material, you
+     must distribute your contributions under the same licence as the
+     original.
+  3. No additional restrictions - You may not apply legal terms or
+     technological measures that legally restrict others from doing
+     anything the licence permits.
+
+Firmware source (s3-salle-de-bain.yaml) and hardware design files (cad/)
+are licensed separately under CERN-OHL-S-2.0 - see LICENSE.

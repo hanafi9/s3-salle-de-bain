@@ -1,0 +1,44 @@
+# Secrets - NE JAMAIS commit
+secrets.yaml
+.secrets/
+*.key
+*.pem
+
+# ESPHome build artifacts
+.esphome/
+.esphome-build/
+build/
+*.bin
+*.elf
+
+# Python (build scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+
+# Node.js (DOCX build scripts)
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups
+*.bak
+*.orig
+*.new.*
+
+# Temporary
+*.tmp
+*.log

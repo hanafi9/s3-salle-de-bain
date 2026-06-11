@@ -1,0 +1,23 @@
+CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S-2.0)
+
+Copyright (c) 2025 Hanafi BENMESBAH / domokami
+
+This Licence governs the rights to use, copy, modify and distribute the Source
+of the firmware (s3-salle-de-bain.yaml + ESPHome lambdas) and the hardware
+design files (SCAD and STL files in cad/).
+
+The full text of the CERN-OHL-S-2.0 licence is available at:
+  https://ohwr.org/cern_ohl_s_v2.txt
+
+Summary of key obligations:
+  1. You may use, copy, modify, distribute and Make Products based on the
+     Covered Source.
+  2. If you Convey Source or a Product, you must do so under this same
+     Licence (strong reciprocity).
+  3. You must provide the Source of any Product you Convey, including
+     modifications, in a form usable by a skilled person.
+  4. You must keep the copyright notices intact and identify any changes
+     you make to the Source.
+
+Documentation (PDF / DOCX rapport technique) is licensed separately under
+CC-BY-SA-4.0 - see LICENSE-DOCS.

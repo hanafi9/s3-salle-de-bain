@@ -69,17 +69,28 @@ vrai depuis les bibliothèques KiCad :
 | U5 | `Regulator_Linear:AMS1117-3.3` |
 | TVS1 | `Power_Protection:USBLC6-2SC6` |
 
-### 3. Générer le PCB
+### 3. Le PCB est **déjà peuplé**
 
-Le `.kicad_pcb` est volontairement vide (juste board outline 100×80 mm) car
-KiCad gère mal les footprints générés sans son outil. Pour peupler le PCB :
+Le `.kicad_pcb` contient :
+- **14 footprints** déjà placés (rectangulaires avec pads PTH 1.7 mm)
+- **70 pads** connectés à leurs nets respectifs
+- **23 nets** déclarés (GND, +3V3, +5V, +5V_LED, signaux)
+- Board outline 120×100 mm
+- Pin 1 marker (cercle) sur chaque footprint
 
+Ouvre le **PCB Editor** directement depuis KiCad : tu vois les 14 composants
+en grille, prêts à être déplacés et routés. **Pas besoin** d'« Update PCB
+from Schematic », mais tu peux le faire si tu modifies le schéma.
+
+#### Pour reposition automatique depuis le schéma
+
+Si jamais tu modifies le schéma et que tu veux propager :
 ```
-Schematic Editor  →  Tools  →  Update PCB from Schematic (F8)
+Schematic Editor  →  Tools  →  Annotate Schematic  (assigner refs U1,U2…)
+                  →  Tools  →  Update PCB from Schematic (F8)
 ```
-
-KiCad importera tous les composants avec leurs empreintes déclarées dans le
-schéma. Vous pourrez ensuite les placer et router.
+Dans le dialog : cocher **« Re-link footprints to schematic symbols »**, puis
+**Update PCB**.
 
 ### 4. Routage suggéré
 

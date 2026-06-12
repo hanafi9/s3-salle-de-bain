@@ -48,26 +48,38 @@ Ou double-cliquez sur `s3-salle-de-bain.kicad_pro` depuis l'explorateur.
 
 ### 2. Vérifier le schéma
 
-Ouvrez le schéma (`Schematic Editor`). Vous verrez :
-- 23 composants placés en grille
-- Connexions par **global labels** (texte coloré au lieu de fils tirés)
-  - Cherchez par exemple `MIC_LRCLK` : il apparaît sur U4 (pin WS) et U1 (pin GPIO4)
-- Toutes les broches ESP32 nommées selon le YAML
-- Rails d'alimentation : `+3V3`, `+5V`, `+5V_LED`, `GND`
+Ouvrez le schéma (`Schematic Editor`). Vous verrez un schéma **entièrement
+câblé** avec les **vrais symboles électroniques standards KiCad** :
 
-**Important** : les composants sont représentés par des rectangles génériques
-(symboles inline). Pour passer en production, remplacez chaque symbole par le
-vrai depuis les bibliothèques KiCad :
+- **Composants discrets** avec leurs symboles normalisés :
+  - `Device:R` (résistances R1, R2), `Device:C` (céramiques C1-C4),
+    `Device:C_Polarized` (électrolytiques C5, C6), `Device:L` (ferrite F1)
+  - `Device:Q_PMOS` (MOSFET Q1 avec broches G/S/D)
+  - `Device:Speaker` (haut-parleurs HP1, HP2 avec cône)
+  - `Switch:SW_SPDT` (switch mute SW2)
+- **Symboles d'alimentation** standards : `power:+3V3`, `power:+5V`,
+  `power:GND` (avec leurs glyphes normalisés), `PWR_FLAG` sur chaque rail
+- **Modules ICs** (U1 ESP32-S3, U2 PCM5102, U3 PAM8403, U4 INMP441,
+  U5 AMS1117, DS1 WS2812, SW1 encodeur, J1 jack, J2 USB-C) en symboles
+  rectangulaires avec broches nommées et typées (power_in sur les pins VCC/GND)
+- **Câblage** : chaque broche a un stub + une étiquette de net (méthode pro pour
+  schéma dense). Les nets `MIC_LRCLK`, `DAC_BCK`, `BTN_CENTER`, etc. connectent
+  les broches par nom.
 
-| Réf | Symbole KiCad recommandé |
-|---|---|
-| U1 | `Module:ESP32-S3-DevKitC-1` |
-| U2 | `Audio:PCM5102` (à ajouter manuellement) |
-| U3 | `Amplifier_Audio:PAM8403` |
-| U4 | `Sensor_Audio:ICS-43434` ou INMP441 |
-| Q1 | `Device:Q_PMOS_GSD` |
-| U5 | `Regulator_Linear:AMS1117-3.3` |
-| TVS1 | `Power_Protection:USBLC6-2SC6` |
+Les symboles standards sont **extraits exactement** de la bibliothèque KiCad 10
+installée (`Device.kicad_sym`, `power.kicad_sym`, `Switch.kicad_sym`), donc
+aucun avertissement de symbole non conforme.
+
+#### Validation
+
+Le schéma a été vérifié avec le moteur de KiCad 10 lui-même :
+- `kicad-cli sch erc` : **19 avertissements mineurs** (lib `Local` non déclarée
+  pour les modules custom — sans impact car symboles embarqués)
+- `kicad-cli sch export pdf/svg` : rendu sans erreur
+- Netlist : **24 nets, 22 composants** tous connectés
+
+Pour régénérer après modification : `python build_kicad_v2.py` (nécessite
+`kicad_std_symbols.py` dans le même dossier).
 
 ### 3. Le PCB est **déjà peuplé**
 

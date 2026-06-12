@@ -48,3 +48,6 @@ desktop.ini
 .history/
 kicad/build_kicad.py
 kicad/build_schematic_svg.py
+
+# Office lock files
+~$*

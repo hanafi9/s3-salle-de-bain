@@ -513,7 +513,7 @@ add_pwr_flag("+5V_LED",100, 250)
 # ============================================================================
 # Footprint assignment (must match build_pcb.py so schematic <-> PCB are linked)
 FOOTPRINTS = {
-    "U1":"Connector_PinHeader_2.54mm:PinHeader_2x11_P2.54mm_Vertical",
+    "U1":"Espressif:ESP32-S3-DevKitC",
     "U2":"Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical",
     "U3":"Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical",
     "U4":"Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical",

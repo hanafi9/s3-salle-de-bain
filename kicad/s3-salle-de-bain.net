@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\hbenm\\Documents\\s3-salle-de-bain\\kicad\\s3-salle-de-bain.kicad_sch")
-		(date "2026-06-13T11:43:23")
+		(date "2026-06-13T12:36:40")
 		(tool "Eeschema 10.0.2")
 		(sheet
 			(number "1")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "a8d2f370-8918-4cb6-9588-1b39439049ad")
+			(tstamps "f0f1a5cc-b416-4ea0-8ab0-1fb56a163153")
 			(units
 				(unit
 					(name "A")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8085a253-3159-4dfd-8c8e-cc5fa73e458c")
+			(tstamps "0fb02307-3991-464e-8127-4de10538f2d1")
 			(units
 				(unit
 					(name "A")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6377af04-4099-4970-9314-8adc799b5e0c")
+			(tstamps "f141f32b-61c0-427b-a42c-bd83e08ffe44")
 			(units
 				(unit
 					(name "A")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "690e9cc7-8133-4ab3-a971-8b0763c45ca4")
+			(tstamps "fbde234b-0bf6-4aa3-8e58-89b9312c55bd")
 			(units
 				(unit
 					(name "A")
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "be0f5e39-533a-4d27-b811-920bb82e05a1")
+			(tstamps "8b28df11-42bf-4de8-aed4-aabb29af4b8a")
 			(units
 				(unit
 					(name "A")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ff53a016-248e-46b9-ad3a-d35605730062")
+			(tstamps "cd33facc-abd1-471a-901c-c34ca567f9ec")
 			(units
 				(unit
 					(name "A")
@@ -409,7 +409,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b1dcf6e3-d0f1-4471-8b46-eb631aebb990")
+			(tstamps "22dd7cbd-a602-465b-a975-1523a0da3ab3")
 			(units
 				(unit
 					(name "A")
@@ -466,7 +466,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7cf93590-0d13-4c1d-832c-48aa871c7d82")
+			(tstamps "3df39731-d9c0-4273-9f1f-8891c15ab269")
 			(units
 				(unit
 					(name "A")
@@ -516,7 +516,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "a95150f6-e762-4846-9a22-981529790727")
+			(tstamps "0cd30f89-ef0b-4209-bb10-6f5c2c81f9a5")
 			(units
 				(unit
 					(name "A")
@@ -566,7 +566,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "9bf2bd19-d1a9-4d39-b339-c30351e93359")
+			(tstamps "a471f7b0-6f5b-4f23-b46c-42f8540cc32b")
 			(units
 				(unit
 					(name "A")
@@ -612,7 +612,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3e8b0922-f4f9-4940-9b1b-270cbf3d4ee2")
+			(tstamps "41b59782-dd3b-477a-a9c9-9824d2714d53")
 			(units
 				(unit
 					(name "A")
@@ -664,7 +664,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3d787c3a-352c-49f7-aaad-3419b4bdc1a7")
+			(tstamps "c48c783e-106a-4151-9b24-2462ad58fe6f")
 			(units
 				(unit
 					(name "A")
@@ -714,7 +714,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "68a8ffbc-7993-489f-9c3d-0fc72afcd867")
+			(tstamps "2c9d1ba2-07cd-4b2d-a5d6-0a2b39c6a3b4")
 			(units
 				(unit
 					(name "A")
@@ -771,7 +771,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bb7def88-007a-41ae-9a71-0a91fde0578d")
+			(tstamps "3ab7aa77-2ee9-41de-bbb8-602d31c2615a")
 			(units
 				(unit
 					(name "A")
@@ -825,7 +825,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "79c1c4b2-016b-4979-8790-886c77e3fc22")
+			(tstamps "d90786c2-eb7d-42b4-85d3-beb2a56dc979")
 			(units
 				(unit
 					(name "A")
@@ -871,7 +871,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ca7f6934-5324-437d-a5d1-6a29e4a8f721")
+			(tstamps "841046d4-2124-4841-bb6a-51905e02f243")
 			(units
 				(unit
 					(name "A")
@@ -930,7 +930,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6d4cf040-27fc-40d7-85e8-225e5d3bc02e")
+			(tstamps "f9bee963-8665-48c4-8487-a5c656fa14a5")
 			(units
 				(unit
 					(name "A")
@@ -951,10 +951,10 @@
 		(comp
 			(ref "U1")
 			(value "ESP32-S3 DevKitC-1")
-			(footprint "Connector_PinHeader_2.54mm:PinHeader_2x11_P2.54mm_Vertical")
+			(footprint "Espressif:ESP32-S3-DevKitC")
 			(fields
 				(field
-					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x11_P2.54mm_Vertical")
+					(name "Footprint") "Espressif:ESP32-S3-DevKitC")
 				(field
 					(name "Datasheet")
 				)
@@ -979,7 +979,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "af353c99-2175-4b84-9c2f-845f1e040d3c")
+			(tstamps "5d8dfa71-e9dd-45ce-b0f6-ea3ba6953844")
 			(units
 				(unit
 					(name "A")
@@ -1070,7 +1070,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "cda22028-3e03-4338-a4d0-894332c2dc24")
+			(tstamps "b8338350-28a7-4e0b-9b37-1b07ad38a984")
 			(units
 				(unit
 					(name "A")
@@ -1146,7 +1146,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "470fce41-c221-45c7-82f6-f385e15792b6")
+			(tstamps "f9157297-ffcc-4ea8-b891-2626b7a304b4")
 			(units
 				(unit
 					(name "A")
@@ -1207,7 +1207,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7bbad63f-fb04-4191-b660-7ca5a32c8720")
+			(tstamps "ba11b583-2e11-4c88-b228-7db1256025d7")
 			(units
 				(unit
 					(name "A")
@@ -1265,7 +1265,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d1973971-f05e-4eff-b1a6-dbc9dfe6e406")
+			(tstamps "62fe8f69-488e-4028-a4c4-11eec4bd1a47")
 			(units
 				(unit
 					(name "A")

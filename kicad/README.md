@@ -89,7 +89,7 @@ KiCad installées, placée et connectée aux nets.
 
 | Réf | Composant | Empreinte réelle |
 |---|---|---|
-| U1 | ESP32-S3 DevKitC-1 | `PinHeader_2x11` (module sur barrette femelle) |
+| U1 | ESP32-S3 DevKitC-1 | **`Espressif:ESP32-S3-DevKitC`** (empreinte officielle Espressif, 2×22 pins, brochage GPIO exact) |
 | U2 | PCM5102 DAC | `PinHeader_2x06` |
 | U3 | PAM8403 ampli | `PinHeader_1x07` |
 | U4 | INMP441 MEMS | `PinHeader_1x06` |

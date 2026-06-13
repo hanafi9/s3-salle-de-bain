@@ -51,3 +51,6 @@ kicad/build_schematic_svg.py
 
 # Office lock files
 ~$*
+kicad/report.txt
+kicad/build_pcb.py
+kicad/*-schema.svg

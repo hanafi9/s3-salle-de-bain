@@ -1,0 +1,73 @@
+Info: Lecture fichier netliste 'C:\Users\hbenm\Documents\s3-salle-de-bain\kicad\s3-salle-de-bain.net'
+
+Info: Utilisation des signatures temporelles (uniques IDs) pour associer composants et empreintes.
+
+Info: Traitement du symbole "C2:".
+Info: Traitement du symbole "C6:".
+Info: Traitement du symbole "C3:".
+Info: Traitement du symbole "C5:".
+Info: Traitement du symbole "C1:".
+Info: Traitement du symbole "C4:".
+Info: Traitement du symbole "DS1:".
+Info: Traitement du symbole "F1:".
+Info: Traitement du symbole "HP1:".
+Info: Traitement du symbole "HP2:".
+Info: Traitement du symbole "J1:".
+Info: Traitement du symbole "J2:".
+Info: Traitement du symbole "Q1:".
+Info: Traitement du symbole "R1:".
+Info: Traitement du symbole "R2:".
+Info: Traitement du symbole "SW1:".
+Info: Traitement du symbole "SW2:".
+Info: Traitement du symbole "U1:".
+Info: Traitement du symbole "U2:".
+Info: Traitement du symbole "U3:".
+Info: Traitement du symbole "U4:".
+Info: Traitement du symbole "U5:".
+Erreur: Pas d'empreinte définie pour le symbole 'SW2'.
+Erreur: Pas d'empreinte définie pour le symbole 'U1'.
+Erreur: Pas d'empreinte définie pour le symbole 'U2'.
+Erreur: Pas d'empreinte définie pour le symbole 'U3'.
+Erreur: Pas d'empreinte définie pour le symbole 'U4'.
+Erreur: Pas d'empreinte définie pour le symbole 'U5'.
+Erreur: Ne peut ajouter le composant 'C1' (empreinte non assignée).
+Erreur: Ne peut ajouter le composant 'C2' (empreinte non assignée).
+Erreur: Ne peut ajouter le composant 'C3' (empreinte non assignée).
+Erreur: Ne peut ajouter le composant 'C4' (empreinte non assignée).
+Erreur: Ne peut ajouter le composant 'C5' (empreinte non assignée).
+Erreur: Ne peut ajouter le composant 'C6' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'C1'.
+Erreur: Ne peut ajouter le composant 'DS1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'C2'.
+Erreur: Ne peut ajouter le composant 'F1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'C3'.
+Erreur: Ne peut ajouter le composant 'HP1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'C4'.
+Erreur: Ne peut ajouter le composant 'HP2' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'C5'.
+Erreur: Ne peut ajouter le composant 'J1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'C6'.
+Erreur: Ne peut ajouter le composant 'J2' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'DS1'.
+Erreur: Ne peut ajouter le composant 'Q1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'F1'.
+Erreur: Ne peut ajouter le composant 'R1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'HP1'.
+Erreur: Ne peut ajouter le composant 'R2' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'HP2'.
+Erreur: Ne peut ajouter le composant 'SW1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'J1'.
+Erreur: Ne peut ajouter le composant 'SW2' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'J2'.
+Erreur: Ne peut ajouter le composant 'U1' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'Q1'.
+Erreur: Ne peut ajouter le composant 'U2' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'R1'.
+Erreur: Ne peut ajouter le composant 'U3' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'R2'.
+Erreur: Ne peut ajouter le composant 'U4' (empreinte non assignée).
+Erreur: Pas d'empreinte définie pour le symbole 'SW1'.
+Erreur: Ne peut ajouter le composant 'U5' (empreinte non assignée).
+
+
+Info: Total warnings: 0, erreurs: 22.

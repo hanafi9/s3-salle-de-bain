@@ -511,6 +511,27 @@ add_pwr_flag("+5V_LED",100, 250)
 # ============================================================================
 # Render
 # ============================================================================
+# Footprint assignment (must match build_pcb.py so schematic <-> PCB are linked)
+FOOTPRINTS = {
+    "U1":"Connector_PinHeader_2.54mm:PinHeader_2x11_P2.54mm_Vertical",
+    "U2":"Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical",
+    "U3":"Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical",
+    "U4":"Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical",
+    "U5":"Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+    "DS1":"Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
+    "SW1":"Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm",
+    "SW2":"Button_Switch_THT:SW_DIP_SPSTx01_Slide_9.78x4.72mm_W7.62mm_P2.54mm",
+    "J1":"Connector_Audio:Jack_3.5mm_PJ320E_Horizontal",
+    "J2":"Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A",
+    "R1":"Resistor_SMD:R_0603_1608Metric","R2":"Resistor_SMD:R_0603_1608Metric",
+    "C1":"Capacitor_SMD:C_0603_1608Metric","C2":"Capacitor_SMD:C_0603_1608Metric",
+    "C3":"Capacitor_SMD:C_0603_1608Metric","C4":"Capacitor_SMD:C_0603_1608Metric",
+    "C5":"Capacitor_SMD:CP_Elec_5x5.3","C6":"Capacitor_SMD:CP_Elec_5x5.3",
+    "Q1":"Package_TO_SOT_SMD:SOT-23","F1":"Inductor_SMD:L_0805_2012Metric",
+    "HP1":"Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+    "HP2":"Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+}
+
 def render_instance(i):
     ref=i["ref"]; lib=i["lib_id"]; x=i["x"]; y=i["y"]; val=i["value"]
     is_power = i.get("power", False)
@@ -519,9 +540,12 @@ def render_instance(i):
                 f'(effects (font (size 1.27 1.27)) (justify left){hide_ref}))\n')
     prop_val = (f'    (property "Value" "{val}" (at {x+3} {y+3} 0) '
                 f'(effects (font (size 1.0 1.0)) (justify left){hide_ref}))\n')
+    fp = FOOTPRINTS.get(ref, "")
+    prop_fp = (f'    (property "Footprint" "{fp}" (at {x} {y} 0) '
+               f'(effects (font (size 1.27 1.27)) hide))\n')
     return (f'  (symbol (lib_id "{lib}") (at {x} {y} 0) (unit 1)\n'
             f'    (in_bom yes) (on_board yes) (dnp no) (uuid "{U()}")\n'
-            f'{prop_ref}{prop_val}'
+            f'{prop_ref}{prop_val}{prop_fp}'
             f'    (instances (project "s3-salle-de-bain"\n'
             f'      (path "/{SCH_UUID}" (reference "{ref}") (unit 1))))\n'
             f'  )\n')

@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\hbenm\\Documents\\s3-salle-de-bain\\kicad\\s3-salle-de-bain.kicad_sch")
-		(date "2026-06-12T09:40:02")
+		(date "2026-06-13T11:43:23")
 		(tool "Eeschema 10.0.2")
 		(sheet
 			(number "1")
@@ -57,10 +57,10 @@
 		(comp
 			(ref "C1")
 			(value "10uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "1acef680-43e7-496e-9eea-6636603ea6aa")
+			(tstamps "a8d2f370-8918-4cb6-9588-1b39439049ad")
 			(units
 				(unit
 					(name "A")
@@ -111,10 +111,10 @@
 		(comp
 			(ref "C2")
 			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7a17f80a-6145-441e-b8bd-8ca24348e121")
+			(tstamps "8085a253-3159-4dfd-8c8e-cc5fa73e458c")
 			(units
 				(unit
 					(name "A")
@@ -165,10 +165,10 @@
 		(comp
 			(ref "C3")
 			(value "10uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "efd70e86-ac23-40bd-9913-289dd35ba012")
+			(tstamps "6377af04-4099-4970-9314-8adc799b5e0c")
 			(units
 				(unit
 					(name "A")
@@ -219,10 +219,10 @@
 		(comp
 			(ref "C4")
 			(value "10uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "2ac102a2-8ee5-49b1-a47c-097721d45fa2")
+			(tstamps "690e9cc7-8133-4ab3-a971-8b0763c45ca4")
 			(units
 				(unit
 					(name "A")
@@ -273,10 +273,10 @@
 		(comp
 			(ref "C5")
 			(value "100uF")
+			(footprint "Capacitor_SMD:CP_Elec_5x5.3")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Capacitor_SMD:CP_Elec_5x5.3")
 				(field
 					(name "Datasheet")
 				)
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c7442ffa-21ed-46c2-b423-ed2938471c3c")
+			(tstamps "be0f5e39-533a-4d27-b811-920bb82e05a1")
 			(units
 				(unit
 					(name "A")
@@ -327,10 +327,10 @@
 		(comp
 			(ref "C6")
 			(value "470uF")
+			(footprint "Capacitor_SMD:CP_Elec_5x5.3")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Capacitor_SMD:CP_Elec_5x5.3")
 				(field
 					(name "Datasheet")
 				)
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "9058ae10-8cde-4d16-beb2-6a49ec390142")
+			(tstamps "ff53a016-248e-46b9-ad3a-d35605730062")
 			(units
 				(unit
 					(name "A")
@@ -381,10 +381,10 @@
 		(comp
 			(ref "DS1")
 			(value "WS2812 Ring x12")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -409,7 +409,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f0855a92-06fe-4431-a84c-24f911f3363f")
+			(tstamps "b1dcf6e3-d0f1-4471-8b46-eb631aebb990")
 			(units
 				(unit
 					(name "A")
@@ -430,10 +430,10 @@
 		(comp
 			(ref "F1")
 			(value "Ferrite 600R")
+			(footprint "Inductor_SMD:L_0805_2012Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Inductor_SMD:L_0805_2012Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -466,7 +466,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "231c25f2-9698-4639-8d9f-638a895fb02e")
+			(tstamps "7cf93590-0d13-4c1d-832c-48aa871c7d82")
 			(units
 				(unit
 					(name "A")
@@ -484,10 +484,10 @@
 		(comp
 			(ref "HP1")
 			(value "HP G 40mm 4R")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -516,7 +516,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b217351d-02e7-482f-bc46-b08a48f1d7f9")
+			(tstamps "a95150f6-e762-4846-9a22-981529790727")
 			(units
 				(unit
 					(name "A")
@@ -534,10 +534,10 @@
 		(comp
 			(ref "HP2")
 			(value "HP D 40mm 4R")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -566,7 +566,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0e3267a0-512e-4585-9ab4-91b0ad1a7b1e")
+			(tstamps "9bf2bd19-d1a9-4d39-b339-c30351e93359")
 			(units
 				(unit
 					(name "A")
@@ -584,10 +584,10 @@
 		(comp
 			(ref "J1")
 			(value "Jack 3.5mm")
+			(footprint "Connector_Audio:Jack_3.5mm_PJ320E_Horizontal")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_Audio:Jack_3.5mm_PJ320E_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -612,7 +612,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "31cb0861-0665-4703-8283-a995e12b4a65")
+			(tstamps "3e8b0922-f4f9-4940-9b1b-270cbf3d4ee2")
 			(units
 				(unit
 					(name "A")
@@ -636,10 +636,10 @@
 		(comp
 			(ref "J2")
 			(value "USB-C 5V")
+			(footprint "Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A")
 				(field
 					(name "Datasheet")
 				)
@@ -664,7 +664,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c75bfd30-8d54-4306-8528-d8e9ff3cb7a2")
+			(tstamps "3d787c3a-352c-49f7-aaad-3419b4bdc1a7")
 			(units
 				(unit
 					(name "A")
@@ -682,10 +682,10 @@
 		(comp
 			(ref "Q1")
 			(value "AO3401")
+			(footprint "Package_TO_SOT_SMD:SOT-23")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
 				(field
 					(name "Datasheet")
 				)
@@ -714,7 +714,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5ccaf4ca-4d3c-4c40-b20b-69545e935816")
+			(tstamps "68a8ffbc-7993-489f-9c3d-0fc72afcd867")
 			(units
 				(unit
 					(name "A")
@@ -735,10 +735,10 @@
 		(comp
 			(ref "R1")
 			(value "10k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -771,7 +771,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "eec6c43a-26b1-400b-b4c1-b3e7889798af")
+			(tstamps "bb7def88-007a-41ae-9a71-0a91fde0578d")
 			(units
 				(unit
 					(name "A")
@@ -789,10 +789,10 @@
 		(comp
 			(ref "R2")
 			(value "330")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
 				(field
 					(name "Datasheet")
 				)
@@ -825,7 +825,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "a0629214-3b74-4ace-9492-3d07f972b493")
+			(tstamps "79c1c4b2-016b-4979-8790-886c77e3fc22")
 			(units
 				(unit
 					(name "A")
@@ -843,10 +843,10 @@
 		(comp
 			(ref "SW1")
 			(value "Encodeur EC11")
+			(footprint "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm")
 				(field
 					(name "Datasheet")
 				)
@@ -871,7 +871,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "31367eb4-d81c-4ac5-a7b7-130c7a780907")
+			(tstamps "ca7f6934-5324-437d-a5d1-6a29e4a8f721")
 			(units
 				(unit
 					(name "A")
@@ -898,10 +898,10 @@
 		(comp
 			(ref "SW2")
 			(value "Switch mute")
+			(footprint "Button_Switch_THT:SW_DIP_SPSTx01_Slide_9.78x4.72mm_W7.62mm_P2.54mm")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Button_Switch_THT:SW_DIP_SPSTx01_Slide_9.78x4.72mm_W7.62mm_P2.54mm")
 				(field
 					(name "Datasheet")
 				)
@@ -930,7 +930,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d3810078-6f46-4dc8-8a22-97630d1e47d9")
+			(tstamps "6d4cf040-27fc-40d7-85e8-225e5d3bc02e")
 			(units
 				(unit
 					(name "A")
@@ -951,10 +951,10 @@
 		(comp
 			(ref "U1")
 			(value "ESP32-S3 DevKitC-1")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_2x11_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x11_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -979,7 +979,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b62c4b6e-3662-4fd6-85bb-7c6ebc854e7b")
+			(tstamps "af353c99-2175-4b84-9c2f-845f1e040d3c")
 			(units
 				(unit
 					(name "A")
@@ -1042,10 +1042,10 @@
 		(comp
 			(ref "U2")
 			(value "PCM5102 DAC")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -1070,7 +1070,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "74463c8f-3985-4ac2-a255-67c490d1a97a")
+			(tstamps "cda22028-3e03-4338-a4d0-894332c2dc24")
 			(units
 				(unit
 					(name "A")
@@ -1118,10 +1118,10 @@
 		(comp
 			(ref "U3")
 			(value "PAM8403")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -1146,7 +1146,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "78e22b76-ab45-4785-b475-94590a2842e5")
+			(tstamps "470fce41-c221-45c7-82f6-f385e15792b6")
 			(units
 				(unit
 					(name "A")
@@ -1179,10 +1179,10 @@
 		(comp
 			(ref "U4")
 			(value "INMP441 MEMS")
+			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
 				(field
 					(name "Datasheet")
 				)
@@ -1207,7 +1207,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "56eaa0cf-b668-491f-b69c-c67bb98e18a4")
+			(tstamps "7bbad63f-fb04-4191-b660-7ca5a32c8720")
 			(units
 				(unit
 					(name "A")
@@ -1237,10 +1237,10 @@
 		(comp
 			(ref "U5")
 			(value "AMS1117-3.3")
+			(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
 				(field
 					(name "Datasheet")
 				)
@@ -1265,7 +1265,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "45949e7b-370d-4a1a-b32f-ca8b86325341")
+			(tstamps "d1973971-f05e-4eff-b1a6-dbc9dfe6e406")
 			(units
 				(unit
 					(name "A")

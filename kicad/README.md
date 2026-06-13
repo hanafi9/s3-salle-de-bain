@@ -81,28 +81,47 @@ Le schéma a été vérifié avec le moteur de KiCad 10 lui-même :
 Pour régénérer après modification : `python build_kicad_v2.py` (nécessite
 `kicad_std_symbols.py` dans le même dossier).
 
-### 3. Le PCB est **déjà peuplé**
+### 3. Le PCB avec **les vraies empreintes**
 
-Le `.kicad_pcb` contient :
-- **14 footprints** déjà placés (rectangulaires avec pads PTH 1.7 mm)
-- **70 pads** connectés à leurs nets respectifs
-- **23 nets** déclarés (GND, +3V3, +5V, +5V_LED, signaux)
-- Board outline 120×100 mm
-- Pin 1 marker (cercle) sur chaque footprint
+Le `.kicad_pcb` a été généré via l'**API pcbnew de KiCad 10** : chaque
+composant utilise sa **vraie empreinte** chargée depuis les bibliothèques
+KiCad installées, placée et connectée aux nets.
 
-Ouvre le **PCB Editor** directement depuis KiCad : tu vois les 14 composants
-en grille, prêts à être déplacés et routés. **Pas besoin** d'« Update PCB
-from Schematic », mais tu peux le faire si tu modifies le schéma.
+| Réf | Composant | Empreinte réelle |
+|---|---|---|
+| U1 | ESP32-S3 DevKitC-1 | `PinHeader_2x11` (module sur barrette femelle) |
+| U2 | PCM5102 DAC | `PinHeader_2x06` |
+| U3 | PAM8403 ampli | `PinHeader_1x07` |
+| U4 | INMP441 MEMS | `PinHeader_1x06` |
+| U5 | AMS1117-3.3 | `Package_TO_SOT_SMD:SOT-223-3_TabPin2` |
+| DS1 | Anneau WS2812 | `PinHeader_1x03` |
+| SW1 | Encodeur EC11 | `Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm` |
+| SW2 | Switch mute | `Button_Switch_THT:SW_DIP_SPSTx01_Slide` |
+| J1 | Jack 3.5 mm | `Connector_Audio:Jack_3.5mm_PJ320E_Horizontal` (avec contact détection R2) |
+| J2 | USB-C | `Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A` |
+| Q1 | AO3401 P-MOS | `Package_TO_SOT_SMD:SOT-23` |
+| F1 | Ferrite | `Inductor_SMD:L_0805_2012Metric` |
+| R1, R2 | Résistances | `Resistor_SMD:R_0603_1608Metric` |
+| C1–C4 | Céramiques | `Capacitor_SMD:C_0603_1608Metric` |
+| C5, C6 | Électrolytiques | `Capacitor_SMD:CP_Elec_5x5.3` |
+| HP1, HP2 | Haut-parleurs | `PinHeader_1x02` |
 
-#### Pour reposition automatique depuis le schéma
+**Validé avec `kicad-cli pcb drc` : 0 erreur.** Les 76 « éléments non
+connectés » sont le **ratsnest** (liaisons à router) — c'est l'état normal
+d'un PCB non encore routé. Ouvre le **PCB Editor**, tu vois les 22 empreintes
+placées avec le chevelu (ratsnest) prêt à router.
 
-Si jamais tu modifies le schéma et que tu veux propager :
-```
-Schematic Editor  →  Tools  →  Annotate Schematic  (assigner refs U1,U2…)
-                  →  Tools  →  Update PCB from Schematic (F8)
-```
-Dans le dialog : cocher **« Re-link footprints to schematic symbols »**, puis
-**Update PCB**.
+Le schéma porte les mêmes empreintes (`Footprint` property), donc
+`Tools → Update PCB from Schematic (F8)` fonctionne aussi si tu modifies le
+schéma.
+
+> **Note** : les modules (ESP32 DevKitC, PCM5102, PAM8403, INMP441, anneau
+> WS2812) sont représentés par des **barrettes de connexion** — c'est la
+> manière correcte de les intégrer (on les enfiche sur des barrettes femelles).
+> La contrainte d'isolation au contour est réglée à 0,25 mm pour l'USB-C
+> (connecteur de bord).
+
+Régénérer le PCB : `"C:\Program Files\KiCad\10.0\bin\python.exe" build_pcb.py`
 
 ### 4. Routage suggéré
 

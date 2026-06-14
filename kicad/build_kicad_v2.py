@@ -219,10 +219,12 @@ ESP32_PINS = [
     ("13","GPIO9","R"),("14","GPIO47","R"),
     ("15","3V3","T"),("16","5V","T"),("17","GND","B"),
 ]
+# GY-PCM5102 / WCMCU module pinout (matches the real board silk)
 PCM_PINS = [
-    ("1","VIN","L"),("2","GND","L"),("3","BCK","L"),("4","DIN","L"),("5","LRCK","L"),
-    ("6","SCK","R"),("7","FMT","R"),("8","FLT","R"),("9","DEMP","R"),("10","XSMT","R"),
-    ("11","LOUT","R"),("12","ROUT","R"),
+    ("1","XMT","L"),("2","FMT","L"),("3","LCK","L"),("4","DIN","L"),
+    ("5","BCK","L"),("6","SCL","L"),("7","DMP","L"),
+    ("8","FLT","R"),("9","GND","R"),("10","3V3","R"),("11","VCC","R"),
+    ("L","Lout","R"),("G","Gout","R"),("R","Rout","R"),
 ]
 PAM_PINS = [
     ("1","VCC","L"),("2","GND","L"),("3","SHDN","L"),("4","LIN","L"),("5","RIN","L"),
@@ -383,10 +385,21 @@ PIN_NET = {
     ("U1","9"):"DAC_LRCK",("U1","10"):"DAC_BCK",("U1","11"):"DAC_DIN",
     ("U1","12"):"LED_DIN_RAW",("U1","13"):"LED_PWR_EN",("U1","14"):"AMP_EN",
     ("U1","15"):"+3V3",("U1","16"):"+5V",("U1","17"):"GND",
-    # PCM5102
-    ("U2","1"):"+3V3",("U2","2"):"GND",("U2","3"):"DAC_BCK",("U2","4"):"DAC_DIN",
-    ("U2","5"):"DAC_LRCK",("U2","6"):"GND",("U2","7"):"GND",("U2","8"):"GND",
-    ("U2","9"):"GND",("U2","10"):"+3V3",("U2","11"):"AUDIO_L",("U2","12"):"AUDIO_R",
+    # PCM5102 (GY-PCM5102 module pinout: XMT FMT LCK DIN BCK SCL DMP FLT GND 3V3 VCC + L/G/R)
+    ("U2","1"):"+3V3",     # XMT (tie high = un-mute)
+    ("U2","2"):"GND",      # FMT
+    ("U2","3"):"DAC_LRCK", # LCK
+    ("U2","4"):"DAC_DIN",  # DIN
+    ("U2","5"):"DAC_BCK",  # BCK
+    ("U2","6"):"GND",      # SCL (internal PLL)
+    ("U2","7"):"GND",      # DMP
+    ("U2","8"):"GND",      # FLT
+    ("U2","9"):"GND",      # GND
+    ("U2","10"):"+3V3",    # 3V3
+    ("U2","11"):"+3V3",    # VCC
+    ("U2","L"):"AUDIO_L",  # line-out L
+    ("U2","G"):"GND",      # line-out G
+    ("U2","R"):"AUDIO_R",  # line-out R
     # PAM8403
     ("U3","1"):"+5V",("U3","2"):"GND",("U3","3"):"AMP_EN",("U3","4"):"AUDIO_L",
     ("U3","5"):"AUDIO_R",("U3","6"):"SPK_L",("U3","7"):"SPK_R",
@@ -514,7 +527,7 @@ add_pwr_flag("+5V_LED",100, 250)
 # Footprint assignment (must match build_pcb.py so schematic <-> PCB are linked)
 FOOTPRINTS = {
     "U1":"Espressif:ESP32-S3-DevKitC",
-    "U2":"Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical",
+    "U2":"Modules:GY-PCM5102",
     "U3":"Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical",
     "U4":"Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical",
     "U5":"Package_TO_SOT_SMD:SOT-223-3_TabPin2",

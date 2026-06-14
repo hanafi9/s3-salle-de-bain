@@ -48,11 +48,24 @@ COMPONENTS = [
         "41":"BTN_CENTER", # GPIO1
         "44":"GND",        # GND
      }),
-    # --- PCM5102 DAC breakout : 2x06 header ---
-    ("U2", "Connector_PinHeader_2.54mm", "PinHeader_2x06_P2.54mm_Vertical",
-     72, 38, 0, "PCM5102", {
-        "1":"+3V3","2":"GND","3":"DAC_BCK","4":"DAC_DIN","5":"DAC_LRCK","6":"GND",
-        "7":"GND","8":"GND","9":"GND","10":"+3V3","11":"AUDIO_L","12":"AUDIO_R",
+    # --- PCM5102 DAC : GY-PCM5102 / WCMCU module (real 1x11 header + L/G/R) ---
+    # Top header L->R: XMT FMT LCK DIN BCK SCL DMP FLT GND 3V3 VCC ; bottom: L G R
+    ("U2", "Modules", "GY-PCM5102",
+     60, 30, 0, "GY-PCM5102", {
+        "1":"+3V3",       # XMT  (soft-mute -> tie high = un-muted)
+        "2":"GND",        # FMT  (I2S format)
+        "3":"DAC_LRCK",   # LCK  (LRCK / word select, GPIO7)
+        "4":"DAC_DIN",    # DIN  (data in, GPIO10)
+        "5":"DAC_BCK",    # BCK  (bit clock, GPIO8)
+        "6":"GND",        # SCL  (system clock -> GND = internal PLL)
+        "7":"GND",        # DMP  (de-emphasis off)
+        "8":"GND",        # FLT  (normal latency)
+        "9":"GND",        # GND
+        "10":"+3V3",      # 3V3
+        "11":"+3V3",      # VCC  (onboard LDO; 3.3-5V tolerant)
+        "L":"AUDIO_L",    # line-out L
+        "G":"GND",        # line-out ground
+        "R":"AUDIO_R",    # line-out R
      }),
     # --- PAM8403 amp module : 1x07 header ---
     ("U3", "Connector_PinHeader_2.54mm", "PinHeader_1x07_P2.54mm_Vertical",
@@ -62,7 +75,7 @@ COMPONENTS = [
      }),
     # --- INMP441 MEMS mic : 1x06 header ---
     ("U4", "Connector_PinHeader_2.54mm", "PinHeader_1x06_P2.54mm_Vertical",
-     48, 35, 0, "INMP441", {
+     48, 33, 0, "INMP441", {
         "1":"+3V3","2":"GND","3":"GND","4":"MIC_LRCLK","5":"MIC_BCLK","6":"MIC_DIN",
      }),
     # --- AMS1117-3.3 LDO : SOT-223 (pin2 = tab = VOUT) ---
@@ -98,7 +111,7 @@ COMPONENTS = [
         "A1":"GND","A12":"GND","B1":"GND","B12":"GND","SH":"GND",
      }),
     # --- Discrete passives ---
-    ("R1", "Resistor_SMD", "R_0603_1608Metric", 50, 52, 0, "10k",
+    ("R1", "Resistor_SMD", "R_0603_1608Metric", 50, 60, 0, "10k",
         {"1":"BTN_CENTER","2":"+3V3"}),
     ("R2", "Resistor_SMD", "R_0603_1608Metric", 100, 33, 0, "330",
         {"1":"LED_DIN_RAW","2":"LED_DIN"}),
@@ -155,8 +168,8 @@ def main():
     pad_assigned = 0
     LOCAL = os.path.dirname(os.path.abspath(__file__))
     for ref, lib, fpname, x, y, rot, value, padmap in COMPONENTS:
-        if lib == "Espressif":
-            libpath = os.path.join(LOCAL, "Espressif.pretty")
+        if lib in ("Espressif", "Modules"):
+            libpath = os.path.join(LOCAL, lib + ".pretty")
         else:
             libpath = os.path.join(FPBASE, lib + ".pretty")
         fp = pcbnew.FootprintLoad(libpath, fpname)

@@ -1,4 +1,5 @@
 (fp_lib_table
   (version 7)
   (lib (name "Espressif")(type "KiCad")(uri "${KIPRJMOD}/Espressif.pretty")(options "")(descr "ESP32 modules - official Espressif footprints"))
+  (lib (name "Modules")(type "KiCad")(uri "${KIPRJMOD}/Modules.pretty")(options "")(descr "Breakout modules - GY-PCM5102 etc."))
 )

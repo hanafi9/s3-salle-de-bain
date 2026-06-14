@@ -67,20 +67,27 @@ COMPONENTS = [
         "G":"GND",        # line-out ground
         "R":"AUDIO_R",    # line-out R
      }),
-    # --- PAM8403 amp module : 1x07 header ---
-    ("U3", "Connector_PinHeader_2.54mm", "PinHeader_1x07_P2.54mm_Vertical",
-     72, 66, 0, "PAM8403", {
-        "1":"+5V","2":"GND","3":"AMP_EN","4":"AUDIO_L","5":"AUDIO_R",
-        "6":"SPK_L","7":"SPK_R",
+    # --- PAM8403 mini module (real board: BTL outputs L-/L+/R-/R-, no SHDN) ---
+    # Top: L OUT R ; bottom-left audio IN L G R ; bottom-right power + - (5V)
+    ("U3", "Modules", "PAM8403-mini",
+     66, 64, 0, "PAM8403", {
+        "L-":"SPK_L-","L+":"SPK_L+","R-":"SPK_R-","R+":"SPK_R+",  # BTL speaker out
+        "LI":"AUDIO_L","GI":"GND","RI":"AUDIO_R",                # audio in
+        "V+":"+5V_AMP","V-":"GND",                               # power (gated by Q2)
      }),
-    # --- INMP441 MEMS mic : 1x06 header ---
-    ("U4", "Connector_PinHeader_2.54mm", "PinHeader_1x06_P2.54mm_Vertical",
-     48, 33, 0, "INMP441", {
-        "1":"+3V3","2":"GND","3":"GND","4":"MIC_LRCLK","5":"MIC_BCLK","6":"MIC_DIN",
+    # --- INMP441 round MEMS mic module (2x3: L/R WS SCK / SD VDD GND) ---
+    ("U4", "Modules", "GY-INMP441",
+     44, 6, 0, "INMP441", {
+        "1":"GND",        # L/R -> GND (left channel, mono)
+        "2":"MIC_LRCLK",  # WS  (GPIO4)
+        "3":"MIC_BCLK",   # SCK (GPIO5)
+        "4":"MIC_DIN",    # SD  (GPIO11)
+        "5":"+3V3",       # VDD
+        "6":"GND",        # GND
      }),
     # --- AMS1117-3.3 LDO : SOT-223 (pin2 = tab = VOUT) ---
     ("U5", "Package_TO_SOT_SMD", "SOT-223-3_TabPin2",
-     107, 13, 0, "AMS1117-3.3", {
+     118, 12, 0, "AMS1117-3.3", {
         "1":"GND","2":"+3V3","3":"+5V",
      }),
     # --- WS2812 ring connector : 1x03 ---
@@ -105,7 +112,7 @@ COMPONENTS = [
      }),
     # --- USB-C receptacle (power only) ---
     ("J2", "Connector_USB", "USB_C_Receptacle_Amphenol_12401610E4-2A",
-     55, 13, 0, "USB-C", {
+     68, 14, 0, "USB-C", {
         # VBUS pads -> +5V ; GND + shield -> GND
         "A4":"+5V","B4":"+5V","A9":"+5V","B9":"+5V",
         "A1":"GND","A12":"GND","B1":"GND","B12":"GND","SH":"GND",
@@ -115,32 +122,35 @@ COMPONENTS = [
         {"1":"BTN_CENTER","2":"+3V3"}),
     ("R2", "Resistor_SMD", "R_0603_1608Metric", 100, 33, 0, "330",
         {"1":"LED_DIN_RAW","2":"LED_DIN"}),
-    ("C1", "Capacitor_SMD", "C_0603_1608Metric", 80, 12, 0, "10uF",
+    ("C1", "Capacitor_SMD", "C_0603_1608Metric", 92, 10, 0, "10uF",
         {"1":"+5V","2":"GND"}),
-    ("C2", "Capacitor_SMD", "C_0603_1608Metric", 85, 12, 0, "100nF",
+    ("C2", "Capacitor_SMD", "C_0603_1608Metric", 97, 10, 0, "100nF",
         {"1":"+5V","2":"GND"}),
-    ("C3", "Capacitor_SMD", "C_0603_1608Metric", 90, 12, 0, "10uF",
+    ("C3", "Capacitor_SMD", "C_0603_1608Metric", 102, 10, 0, "10uF",
         {"1":"+3V3","2":"GND"}),
-    ("C4", "Capacitor_SMD", "C_0603_1608Metric", 95, 12, 0, "10uF",
+    ("C4", "Capacitor_SMD", "C_0603_1608Metric", 107, 10, 0, "10uF",
         {"1":"+3V3","2":"GND"}),
     ("C5", "Capacitor_SMD", "CP_Elec_5x5.3", 112, 90, 0, "100uF",
         {"1":"+5V","2":"GND"}),
-    ("C6", "Capacitor_SMD", "CP_Elec_5x5.3", 130, 13, 0, "470uF",
+    ("C6", "Capacitor_SMD", "CP_Elec_5x5.3", 139, 13, 0, "470uF",
         {"1":"+5V_LED","2":"GND"}),
-    # --- P-MOSFET AO3401 SOT-23 (1=Gate 2=Source 3=Drain) ---
+    # --- P-MOSFET AO3401 SOT-23 (1=Gate 2=Source 3=Drain) : LED power gate ---
     ("Q1", "Package_TO_SOT_SMD", "SOT-23", 114, 54, 0, "AO3401",
         {"1":"LED_PWR_EN","2":"+5V","3":"+5V_LED"}),
+    # --- P-MOSFET AO3401 SOT-23 : amp power gate (GPIO47 enables PAM8403) ---
+    ("Q2", "Package_TO_SOT_SMD", "SOT-23", 95, 64, 0, "AO3401",
+        {"1":"AMP_EN","2":"+5V","3":"+5V_AMP"}),
     # --- Ferrite bead ---
-    ("F1", "Inductor_SMD", "L_0805_2012Metric", 120, 13, 0, "Ferrite 600R",
+    ("F1", "Inductor_SMD", "L_0805_2012Metric", 131, 12, 0, "Ferrite 600R",
         {"1":"+5V","2":"+5V_LED"}),
-    # --- Speaker connectors ---
+    # --- Speaker connectors (BTL differential : connect across +/- , NOT to GND) ---
     ("HP1", "Connector_PinHeader_2.54mm", "PinHeader_1x02_P2.54mm_Vertical",
-     124, 66, 0, "HP-Left", {"1":"SPK_L","2":"GND"}),
+     124, 66, 0, "HP-Left", {"1":"SPK_L+","2":"SPK_L-"}),
     ("HP2", "Connector_PinHeader_2.54mm", "PinHeader_1x02_P2.54mm_Vertical",
-     124, 80, 0, "HP-Right", {"1":"SPK_R","2":"GND"}),
+     124, 80, 0, "HP-Right", {"1":"SPK_R+","2":"SPK_R-"}),
 ]
 
-BOARD_W, BOARD_H = 135, 100
+BOARD_W, BOARD_H = 145, 108
 
 def main():
     board = pcbnew.BOARD()

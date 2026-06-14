@@ -226,11 +226,13 @@ PCM_PINS = [
     ("8","FLT","R"),("9","GND","R"),("10","3V3","R"),("11","VCC","R"),
     ("L","Lout","R"),("G","Gout","R"),("R","Rout","R"),
 ]
+# PAM8403 mini module (real board: BTL differential outputs, audio in, power)
 PAM_PINS = [
-    ("1","VCC","L"),("2","GND","L"),("3","SHDN","L"),("4","LIN","L"),("5","RIN","L"),
-    ("6","LOUT+","R"),("7","ROUT+","R"),
+    ("V+","V+","L"),("V-","GND","L"),("LI","Lin","L"),("GI","Gin","L"),("RI","Rin","L"),
+    ("L+","L+","R"),("L-","L-","R"),("R+","R+","R"),("R-","R-","R"),
 ]
-MIC_PINS = [("1","VDD","R"),("2","GND","R"),("3","L/R","R"),("4","WS","R"),("5","SCK","R"),("6","SD","R")]
+# GY-INMP441 round module (pad numbers match footprint: 1=L/R 2=WS 3=SCK 4=SD 5=VDD 6=GND)
+MIC_PINS = [("1","L/R","L"),("2","WS","L"),("3","SCK","L"),("4","SD","R"),("5","VDD","R"),("6","GND","R")]
 WS_PINS = [("1","VCC","L"),("2","GND","L"),("3","DIN","L")]
 ENC_PINS = [("1","A","R"),("2","C","R"),("3","B","R"),("4","BTN_A","R"),("5","BTN_B","R")]
 JACK_PINS = [("1","Tip","R"),("2","Ring","R"),("3","Sleeve","R"),("4","Det","R")]
@@ -361,9 +363,10 @@ place("U2","Local:PCM5102",     240, 80, "PCM5102 DAC")
 place("U3","Local:PAM8403",     240, 145,"PAM8403")
 place("DS1","Local:WS2812-Ring",310, 75, "WS2812 Ring x12")
 place("R2","Device:R",          285, 75, "330")
-place("Q1","Device:Q_PMOS",     310, 120,"AO3401")
+place("Q1","Device:Q_PMOS",     310, 120,"AO3401 (LED gate)")
+place("Q2","Device:Q_PMOS",     250, 175,"AO3401 (amp gate)")
 place("HP1","Device:Speaker",   320, 150,"HP G 40mm 4R")
-place("HP2","Device:Speaker",   320, 175,"HP D 40mm 4R")
+place("HP2","Device:Speaker",   320, 185,"HP D 40mm 4R")
 # Power top: USB-C / LDO / ferrite / decoupling
 place("J2","Local:USB-C",       110, 40, "USB-C 5V")
 place("U5","Local:AMS1117-3.3", 175, 45, "AMS1117-3.3")
@@ -400,12 +403,13 @@ PIN_NET = {
     ("U2","L"):"AUDIO_L",  # line-out L
     ("U2","G"):"GND",      # line-out G
     ("U2","R"):"AUDIO_R",  # line-out R
-    # PAM8403
-    ("U3","1"):"+5V",("U3","2"):"GND",("U3","3"):"AMP_EN",("U3","4"):"AUDIO_L",
-    ("U3","5"):"AUDIO_R",("U3","6"):"SPK_L",("U3","7"):"SPK_R",
-    # INMP441
-    ("U4","1"):"+3V3",("U4","2"):"GND",("U4","3"):"GND",("U4","4"):"MIC_LRCLK",
-    ("U4","5"):"MIC_BCLK",("U4","6"):"MIC_DIN",
+    # PAM8403 mini module (BTL differential outputs, no SHDN; power gated by Q2)
+    ("U3","V+"):"+5V_AMP",("U3","V-"):"GND",
+    ("U3","LI"):"AUDIO_L",("U3","GI"):"GND",("U3","RI"):"AUDIO_R",
+    ("U3","L+"):"SPK_L+",("U3","L-"):"SPK_L-",("U3","R+"):"SPK_R+",("U3","R-"):"SPK_R-",
+    # INMP441 round module (1=L/R 2=WS 3=SCK 4=SD 5=VDD 6=GND)
+    ("U4","1"):"GND",("U4","2"):"MIC_LRCLK",("U4","3"):"MIC_BCLK",
+    ("U4","4"):"MIC_DIN",("U4","5"):"+3V3",("U4","6"):"GND",
     # WS2812
     ("DS1","1"):"+5V_LED",("DS1","2"):"GND",("DS1","3"):"LED_DIN",
     # Encoder
@@ -425,9 +429,10 @@ PIN_NET = {
     ("R2","1"):"LED_DIN_RAW",("R2","2"):"LED_DIN",
     # Q1 P-MOS (pin numbers are letters G/S/D)
     ("Q1","G"):"LED_PWR_EN",("Q1","S"):"+5V",("Q1","D"):"+5V_LED",
+    ("Q2","G"):"AMP_EN",("Q2","S"):"+5V",("Q2","D"):"+5V_AMP",
     # Speakers
-    ("HP1","1"):"SPK_L",("HP1","2"):"GND",
-    ("HP2","1"):"SPK_R",("HP2","2"):"GND",
+    ("HP1","1"):"SPK_L+",("HP1","2"):"SPK_L-",
+    ("HP2","1"):"SPK_R+",("HP2","2"):"SPK_R-",
     # Decoupling caps
     ("C1","1"):"+5V",("C1","2"):"GND",
     ("C2","1"):"+5V",("C2","2"):"GND",
@@ -528,8 +533,8 @@ add_pwr_flag("+5V_LED",100, 250)
 FOOTPRINTS = {
     "U1":"Espressif:ESP32-S3-DevKitC",
     "U2":"Modules:GY-PCM5102",
-    "U3":"Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical",
-    "U4":"Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical",
+    "U3":"Modules:PAM8403-mini",
+    "U4":"Modules:GY-INMP441",
     "U5":"Package_TO_SOT_SMD:SOT-223-3_TabPin2",
     "DS1":"Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
     "SW1":"Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm",
@@ -540,7 +545,8 @@ FOOTPRINTS = {
     "C1":"Capacitor_SMD:C_0603_1608Metric","C2":"Capacitor_SMD:C_0603_1608Metric",
     "C3":"Capacitor_SMD:C_0603_1608Metric","C4":"Capacitor_SMD:C_0603_1608Metric",
     "C5":"Capacitor_SMD:CP_Elec_5x5.3","C6":"Capacitor_SMD:CP_Elec_5x5.3",
-    "Q1":"Package_TO_SOT_SMD:SOT-23","F1":"Inductor_SMD:L_0805_2012Metric",
+    "Q1":"Package_TO_SOT_SMD:SOT-23","Q2":"Package_TO_SOT_SMD:SOT-23",
+    "F1":"Inductor_SMD:L_0805_2012Metric",
     "HP1":"Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
     "HP2":"Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
 }

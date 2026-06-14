@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\hbenm\\Documents\\s3-salle-de-bain\\kicad\\s3-salle-de-bain.kicad_sch")
-		(date "2026-06-14T12:32:50")
+		(date "2026-06-14T13:34:30")
 		(tool "Eeschema 10.0.2")
 		(sheet
 			(number "1")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e204aa91-ff3d-4af9-a103-abb33d832f9e")
+			(tstamps "f2a84180-1cd2-4eb1-9369-d88b7cdcb882")
 			(units
 				(unit
 					(name "A")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0432d398-dd3b-409c-9854-3a20b123e08b")
+			(tstamps "deded861-2294-4732-9541-1970f87199b4")
 			(units
 				(unit
 					(name "A")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "eaade34a-c5d8-4da0-80d3-a684fc192fb7")
+			(tstamps "b18095c8-daf7-400f-bc11-62f97e1f83f7")
 			(units
 				(unit
 					(name "A")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b381e4eb-2e43-4176-a7cc-59e9f3929afc")
+			(tstamps "4e9d4ad0-d57b-4a56-9fdf-084a844af396")
 			(units
 				(unit
 					(name "A")
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "395671aa-b0bc-4e0a-a5f4-a5935e0af14f")
+			(tstamps "1af122f8-9714-484f-bd0a-f7396624dcaf")
 			(units
 				(unit
 					(name "A")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "168e1381-754c-4a0c-b4b9-1b8d0703cd77")
+			(tstamps "328459e0-ec90-40b3-9258-ba5b5b39066a")
 			(units
 				(unit
 					(name "A")
@@ -409,7 +409,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ae69b50c-e484-48f6-9a5e-f2b46dcba098")
+			(tstamps "0b573e26-19a7-4a3f-92c2-8f4f4d9eeeae")
 			(units
 				(unit
 					(name "A")
@@ -466,7 +466,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "a3c84e44-1c3a-4f59-8f49-054010769eba")
+			(tstamps "fef33b95-b2f8-4106-976c-34d5b24ceefa")
 			(units
 				(unit
 					(name "A")
@@ -516,7 +516,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c8fb5da2-c452-4bf9-b55b-644b340f15f8")
+			(tstamps "4ebc597e-2b42-4bfc-87dd-3e604e4e3126")
 			(units
 				(unit
 					(name "A")
@@ -566,7 +566,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c9244894-b25a-4570-8ff7-73c69985eb88")
+			(tstamps "53c7b1b9-d44b-49d0-8a5c-8b448b34db77")
 			(units
 				(unit
 					(name "A")
@@ -612,7 +612,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3ba107ed-5c61-4bdd-8eae-b1491f46d518")
+			(tstamps "a546477e-0b3c-4336-b9a5-50e23bc5b0fc")
 			(units
 				(unit
 					(name "A")
@@ -664,7 +664,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e3084b2a-1509-4fa7-bb4e-c0d8bd706664")
+			(tstamps "148b315b-da45-4993-b818-785da9e60b1d")
 			(units
 				(unit
 					(name "A")
@@ -681,7 +681,7 @@
 		)
 		(comp
 			(ref "Q1")
-			(value "AO3401")
+			(value "AO3401 (LED gate)")
 			(footprint "Package_TO_SOT_SMD:SOT-23")
 			(fields
 				(field
@@ -714,7 +714,60 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7f09dc09-31b0-4e95-9bf3-bf51906397db")
+			(tstamps "a822ed4f-aa82-45e6-9309-078f14dcb9f8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "G")
+						)
+						(pin
+							(num "D")
+						)
+						(pin
+							(num "S")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "Q2")
+			(value "AO3401 (amp gate)")
+			(footprint "Package_TO_SOT_SMD:SOT-23")
+			(fields
+				(field
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "Q_PMOS")
+				(description "P-MOSFET transistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "s3-salle-de-bain.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "PMOS P-MOS")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9f564c43-122e-4cd0-a14e-fcaaaccae88a")
 			(units
 				(unit
 					(name "A")
@@ -771,7 +824,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7259396b-f186-4095-8d71-47f27b433d30")
+			(tstamps "50a87dca-69a0-4d77-a5c5-2f704124abf7")
 			(units
 				(unit
 					(name "A")
@@ -825,7 +878,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6e5b5271-7768-4a70-959f-85250f0243d4")
+			(tstamps "33021187-97e2-4454-9223-b30e6b933ee8")
 			(units
 				(unit
 					(name "A")
@@ -871,7 +924,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3e870a86-c73a-43fa-a2f5-40835af450ee")
+			(tstamps "323da5d8-3f47-4061-af81-7293e406a884")
 			(units
 				(unit
 					(name "A")
@@ -930,7 +983,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3de684d2-34c3-46bf-a967-edc7cd80bd35")
+			(tstamps "a09e804c-7385-4a02-b31b-bdc67c2f2b99")
 			(units
 				(unit
 					(name "A")
@@ -979,7 +1032,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "515b931b-be96-424d-b2c9-a96b536d45ec")
+			(tstamps "99181bea-fb7b-4cfb-8abe-1e60deaf01d6")
 			(units
 				(unit
 					(name "A")
@@ -1070,7 +1123,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "607bef1c-2030-4cfc-b565-bf191167e782")
+			(tstamps "391d700a-7a9e-4be7-97f1-d13c6d0422c7")
 			(units
 				(unit
 					(name "A")
@@ -1124,10 +1177,10 @@
 		(comp
 			(ref "U3")
 			(value "PAM8403")
-			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical")
+			(footprint "Modules:PAM8403-mini")
 			(fields
 				(field
-					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical")
+					(name "Footprint") "Modules:PAM8403-mini")
 				(field
 					(name "Datasheet")
 				)
@@ -1152,31 +1205,37 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "2b55c513-92f7-40b9-8904-1d7833e6bfd6")
+			(tstamps "92341d88-130a-4ad6-999a-d464345613f4")
 			(units
 				(unit
 					(name "A")
 					(pins
 						(pin
-							(num "1")
+							(num "V+")
 						)
 						(pin
-							(num "2")
+							(num "V-")
 						)
 						(pin
-							(num "3")
+							(num "LI")
 						)
 						(pin
-							(num "4")
+							(num "GI")
 						)
 						(pin
-							(num "5")
+							(num "RI")
 						)
 						(pin
-							(num "6")
+							(num "L+")
 						)
 						(pin
-							(num "7")
+							(num "L-")
+						)
+						(pin
+							(num "R+")
+						)
+						(pin
+							(num "R-")
 						)
 					)
 				)
@@ -1185,10 +1244,10 @@
 		(comp
 			(ref "U4")
 			(value "INMP441 MEMS")
-			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+			(footprint "Modules:GY-INMP441")
 			(fields
 				(field
-					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
+					(name "Footprint") "Modules:GY-INMP441")
 				(field
 					(name "Datasheet")
 				)
@@ -1213,7 +1272,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "197322a6-0465-40bf-ac40-48bafcf06a9c")
+			(tstamps "cee1d85b-d1f0-437a-b601-025b3385fb27")
 			(units
 				(unit
 					(name "A")
@@ -1271,7 +1330,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0ebc401a-20e7-4231-90e7-5adde8c74f7a")
+			(tstamps "6c2e8a71-d921-4a25-bb6e-9971eb1b3703")
 			(units
 				(unit
 					(name "A")
@@ -1708,33 +1767,33 @@
 			(pins
 				(pin
 					(num "1")
-					(name "VDD")
-					(type "power_in")
-				)
-				(pin
-					(num "2")
-					(name "GND")
-					(type "power_in")
-				)
-				(pin
-					(num "3")
 					(name "L/R")
 					(type "bidirectional")
 				)
 				(pin
-					(num "4")
+					(num "2")
 					(name "WS")
 					(type "bidirectional")
 				)
 				(pin
-					(num "5")
+					(num "3")
 					(name "SCK")
 					(type "bidirectional")
 				)
 				(pin
-					(num "6")
+					(num "4")
 					(name "SD")
 					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "GND")
+					(type "power_in")
 				)
 			)
 		)
@@ -1799,39 +1858,49 @@
 			)
 			(pins
 				(pin
-					(num "1")
-					(name "VCC")
-					(type "power_in")
+					(num "GI")
+					(name "Gin")
+					(type "bidirectional")
 				)
 				(pin
-					(num "2")
+					(num "L+")
+					(name "L+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "L-")
+					(name "L-")
+					(type "bidirectional")
+				)
+				(pin
+					(num "LI")
+					(name "Lin")
+					(type "bidirectional")
+				)
+				(pin
+					(num "R+")
+					(name "R+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "R-")
+					(name "R-")
+					(type "bidirectional")
+				)
+				(pin
+					(num "RI")
+					(name "Rin")
+					(type "bidirectional")
+				)
+				(pin
+					(num "V+")
+					(name "V+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "V-")
 					(name "GND")
 					(type "power_in")
-				)
-				(pin
-					(num "3")
-					(name "SHDN")
-					(type "bidirectional")
-				)
-				(pin
-					(num "4")
-					(name "LIN")
-					(type "bidirectional")
-				)
-				(pin
-					(num "5")
-					(name "RIN")
-					(type "bidirectional")
-				)
-				(pin
-					(num "6")
-					(name "LOUT+")
-					(type "bidirectional")
-				)
-				(pin
-					(num "7")
-					(name "ROUT+")
-					(type "bidirectional")
 				)
 			)
 		)
@@ -2086,8 +2155,8 @@
 			)
 			(node
 				(ref "U4")
-				(pin "1")
-				(pinfunction "VDD_1")
+				(pin "5")
+				(pinfunction "VDD_5")
 				(pintype "power_in")
 			)
 			(node
@@ -2135,15 +2204,15 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "Q2")
+				(pin "S")
+				(pinfunction "S_S")
+				(pintype "passive")
+			)
+			(node
 				(ref "U1")
 				(pin "16")
 				(pinfunction "5V_16")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U3")
-				(pin "1")
-				(pinfunction "VCC_1")
 				(pintype "power_in")
 			)
 			(node
@@ -2155,6 +2224,23 @@
 		)
 		(net
 			(code "3")
+			(name "/+5V_AMP")
+			(class "Default")
+			(node
+				(ref "Q2")
+				(pin "D")
+				(pinfunction "D_D")
+				(pintype "passive")
+			)
+			(node
+				(ref "U3")
+				(pin "V+")
+				(pinfunction "V+_V+")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "4")
 			(name "/+5V_LED")
 			(class "Default")
 			(node
@@ -2182,24 +2268,24 @@
 			)
 		)
 		(net
-			(code "4")
+			(code "5")
 			(name "/AMP_EN")
 			(class "Default")
+			(node
+				(ref "Q2")
+				(pin "G")
+				(pinfunction "G_G")
+				(pintype "input")
+			)
 			(node
 				(ref "U1")
 				(pin "14")
 				(pinfunction "GPIO47_14")
 				(pintype "bidirectional")
 			)
-			(node
-				(ref "U3")
-				(pin "3")
-				(pinfunction "SHDN_3")
-				(pintype "bidirectional")
-			)
 		)
 		(net
-			(code "5")
+			(code "6")
 			(name "/AUDIO_L")
 			(class "Default")
 			(node
@@ -2216,13 +2302,13 @@
 			)
 			(node
 				(ref "U3")
-				(pin "4")
-				(pinfunction "LIN_4")
+				(pin "LI")
+				(pinfunction "Lin_LI")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "6")
+			(code "7")
 			(name "/AUDIO_R")
 			(class "Default")
 			(node
@@ -2239,13 +2325,13 @@
 			)
 			(node
 				(ref "U3")
-				(pin "5")
-				(pinfunction "RIN_5")
+				(pin "RI")
+				(pinfunction "Rin_RI")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "7")
+			(code "8")
 			(name "/BTN_CENTER")
 			(class "Default")
 			(node
@@ -2267,7 +2353,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "9")
 			(name "/DAC_BCK")
 			(class "Default")
 			(node
@@ -2284,7 +2370,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "10")
 			(name "/DAC_DIN")
 			(class "Default")
 			(node
@@ -2301,7 +2387,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "11")
 			(name "/DAC_LRCK")
 			(class "Default")
 			(node
@@ -2318,7 +2404,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "12")
 			(name "/ENC_A")
 			(class "Default")
 			(node
@@ -2335,7 +2421,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "/ENC_B")
 			(class "Default")
 			(node
@@ -2352,7 +2438,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "/JACK_DET")
 			(class "Default")
 			(node
@@ -2369,7 +2455,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "15")
 			(name "/LED_DIN")
 			(class "Default")
 			(node
@@ -2385,7 +2471,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "16")
 			(name "/LED_DIN_RAW")
 			(class "Default")
 			(node
@@ -2401,7 +2487,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "17")
 			(name "/LED_PWR_EN")
 			(class "Default")
 			(node
@@ -2418,7 +2504,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "18")
 			(name "/MIC_BCLK")
 			(class "Default")
 			(node
@@ -2429,13 +2515,13 @@
 			)
 			(node
 				(ref "U4")
-				(pin "5")
-				(pinfunction "SCK_5")
+				(pin "3")
+				(pinfunction "SCK_3")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "18")
+			(code "19")
 			(name "/MIC_DIN")
 			(class "Default")
 			(node
@@ -2446,13 +2532,13 @@
 			)
 			(node
 				(ref "U4")
-				(pin "6")
-				(pinfunction "SD_6")
+				(pin "4")
+				(pinfunction "SD_4")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "19")
+			(code "20")
 			(name "/MIC_LRCLK")
 			(class "Default")
 			(node
@@ -2463,13 +2549,13 @@
 			)
 			(node
 				(ref "U4")
-				(pin "4")
-				(pinfunction "WS_4")
+				(pin "2")
+				(pinfunction "WS_2")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "20")
+			(code "21")
 			(name "/MUTE_SW")
 			(class "Default")
 			(node
@@ -2486,8 +2572,8 @@
 			)
 		)
 		(net
-			(code "21")
-			(name "/SPK_L")
+			(code "22")
+			(name "/SPK_L+")
 			(class "Default")
 			(node
 				(ref "HP1")
@@ -2497,14 +2583,31 @@
 			)
 			(node
 				(ref "U3")
-				(pin "6")
-				(pinfunction "LOUT+_6")
+				(pin "L+")
+				(pinfunction "L+_L+")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "22")
-			(name "/SPK_R")
+			(code "23")
+			(name "/SPK_L-")
+			(class "Default")
+			(node
+				(ref "HP1")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "L-")
+				(pinfunction "L-_L-")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "24")
+			(name "/SPK_R+")
 			(class "Default")
 			(node
 				(ref "HP2")
@@ -2514,13 +2617,30 @@
 			)
 			(node
 				(ref "U3")
-				(pin "7")
-				(pinfunction "ROUT+_7")
+				(pin "R+")
+				(pinfunction "R+_R+")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "23")
+			(code "25")
+			(name "/SPK_R-")
+			(class "Default")
+			(node
+				(ref "HP2")
+				(pin "2")
+				(pinfunction "2_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U3")
+				(pin "R-")
+				(pinfunction "R-_R-")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "26")
 			(name "GND")
 			(class "Default")
 			(node
@@ -2558,18 +2678,6 @@
 				(pin "2")
 				(pinfunction "GND_2")
 				(pintype "power_in")
-			)
-			(node
-				(ref "HP1")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "input")
-			)
-			(node
-				(ref "HP2")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "input")
 			)
 			(node
 				(ref "J1")
@@ -2645,21 +2753,27 @@
 			)
 			(node
 				(ref "U3")
-				(pin "2")
-				(pinfunction "GND_2")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U4")
-				(pin "2")
-				(pinfunction "GND_2")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U4")
-				(pin "3")
-				(pinfunction "L/R_3")
+				(pin "GI")
+				(pinfunction "Gin_GI")
 				(pintype "bidirectional")
+			)
+			(node
+				(ref "U3")
+				(pin "V-")
+				(pinfunction "GND_V-")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "L/R_1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U4")
+				(pin "6")
+				(pinfunction "GND_6")
+				(pintype "power_in")
 			)
 			(node
 				(ref "U5")
@@ -2669,7 +2783,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "27")
 			(name "unconnected-(SW2-B-Pad2)")
 			(class "Default")
 			(node

@@ -2,9 +2,16 @@ S3 Salle de Bain - Voice Assistant Enclosure
 Par Hanafi BENMESBAH / domokami
 =============================================
 
-Ce dossier contient les fichiers CAO du boitier 3D imprimable en ABS.
+>>> BOITIER COURANT : voir le dossier  boitier_v4/  <<<
+    Galet rectangulaire arrondi adapte a la carte porteuse 145 x 108 mm,
+    design classe & epure, HP front-firing, molette centree, PA-CF.
+    Projet OrcaSlicer pret a trancher : boitier_v4/boitier_v4.3mf
 
---- CONTENU ---
+Les fichiers ci-dessous (housing_*, speaker_baffle, diffuser_ring) sont
+l'ANCIEN boitier cylindrique Ø110 mm, conserve en LEGACY : il ne loge pas
+la carte 145 x 108 mm. Utilisez boitier_v4/ pour une nouvelle impression.
+
+--- CONTENU (legacy, boitier cylindrique) ---
 
 Sources parametriques (OpenSCAD) - a privilegier :
   housing_top.scad       Capot superieur avec aperture LED et bouton

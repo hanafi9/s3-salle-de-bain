@@ -61,3 +61,8 @@ kicad/*.ses
 kicad/*.rules
 kicad/temp-*
 kicad/*-drc.rpt
+kicad/DRC.rpt
+
+# KiCad / Office lock files
+*.lck
+~*.lck

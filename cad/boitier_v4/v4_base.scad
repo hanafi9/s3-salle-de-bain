@@ -56,16 +56,6 @@ module base() {
             translate([sx*(outer_l/2 - foot_inset), sy*(outer_w/2 - foot_inset), -0.01])
                 cylinder(d=foot_d, h=foot_recess);
 
-        // Marquage grave : logo DOMOKAMI + version (dessous, miroir pour
-        // lecture correcte boitier retourne)
-        for (it = [[brand_text, brand_size, brand_pos1],
-                   [brand_version, brand_ver_size, brand_pos2]])
-            translate([it[2][0], it[2][1], -0.01])
-                linear_extrude(height = brand_depth + 0.01)
-                    mirror([1,0,0])
-                        text(it[0], size = it[1], halign = "center",
-                             valign = "center", font = brand_font);
-
         // Encoche de demontage (paroi laterale -X, sous la levre)
         translate([-outer_l/2 + wall/2, 0, base_h - 3])
             cube([wall+1, 16, 6], center=true);

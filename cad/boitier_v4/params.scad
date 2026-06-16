@@ -97,15 +97,16 @@ foot_d = 12;
 foot_recess = 0.8;
 foot_inset = 15;
 
-// --- Marquage grave sous le bac (logo DOMOKAMI + version) ---
+// --- Marquage EN RELIEF sur le capot (logo DOMOKAMI + version) ---
+// Sous la molette, sur la zone plate du dessus (a l'ecart de l'anneau LED).
 brand_text    = "DOMOKAMI";       // wordmark (pas de fichier logo fourni)
 brand_version = "S3  v4";         // version materielle du boitier
-brand_size    = 7.0;              // hauteur des lettres du logo (mm)
-brand_ver_size= 4.6;              // hauteur de la version
-brand_depth   = 0.6;              // profondeur de gravure (mm)
+brand_size    = 5.0;              // hauteur des lettres du logo (mm)
+brand_ver_size= 3.2;              // hauteur de la version
+brand_relief  = 0.6;             // hauteur du relief (mm)
 brand_font    = "Liberation Sans:style=Bold";
-brand_pos1    = [0,  28];         // logo  (au-dessus des events)
-brand_pos2    = [0,  18];         // version
+brand_pos1    = [0, 34.5];        // logo    (cote facade, sous la molette)
+brand_pos2    = [0, 39.7];        // version (sous le logo, vers le bord avant)
 
 // ============================================================
 // Helpers

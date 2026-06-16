@@ -55,8 +55,9 @@ FreeCAD. Les trois sont **valides et fermés** (un solide chacun, sauf le joint
 - **Anneau LED** WS2812 : Ø 60 / 44 mm, gorge diffuseur
 - **Micro** : pinhole conique Ø 0,8 mm, placé **au-dessus du module INMP441**
 - **USB-C** : découpe alignée sur le connecteur `J2` réel de la carte
-- **Marquage** : logo **DOMOKAMI** + version **S3 v4** gravés sous le bac
-  (lisibles boîtier retourné), paramétrables dans `params.scad` (`brand_*`)
+- **Marquage** : logo **DOMOKAMI** + version **S3 v4** **en relief sur le capot**
+  (sous la molette, côté façade, lisibles face à l'utilisateur), paramétrables
+  dans `params.scad` (`brand_*`)
 - **Fermeture** : lèvre périphérique en **press-fit** (jeu 0,15 mm), aucune vis
   visible + encoche de démontage latérale
 - **Fixation PCB** : 4 × M3 sur entretoises, alignées sur les **4 trous réels

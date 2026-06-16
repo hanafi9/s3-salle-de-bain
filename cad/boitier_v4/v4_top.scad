@@ -64,6 +64,16 @@ module top_cap() {
             translate([0,0,mic_cone_h]) cylinder(d = mic_hole_d, h = top_h);
         }
     }
+
+    // ---- Marquage EN RELIEF : logo DOMOKAMI + version (sous la molette) ----
+    // ajoute apres le difference -> matiere en saillie sur la face superieure
+    for (it = [[brand_text, brand_size, brand_pos1],
+               [brand_version, brand_ver_size, brand_pos2]])
+        translate([it[2][0], it[2][1], top_h - 0.4])
+            rotate([0,0,180])    // lecture depuis la facade (+Y)
+                linear_extrude(height = 0.4 + brand_relief)
+                    text(it[0], size = it[1], halign = "center",
+                         valign = "center", font = brand_font);
 }
 
 top_cap();

@@ -9,8 +9,9 @@ import os, FreeCAD, Part, Mesh
 
 HERE  = os.path.dirname(os.path.abspath(__file__))
 # (nom, volume matiere attendu min, max) -- garde-fou anti solide malforme
-PARTS = [("v4_base", 50000, 200000),
-         ("v4_top",  80000, 300000),
+# NB : le bac (v4_base) est traite a part par base_simple_to_step.py
+# (grilles circulaires + fn reduit) pour un STEP valide et leger.
+PARTS = [("v4_top",  80000, 300000),
          ("v4_speaker_gasket", 500, 6000)]
 
 def to_solid(m, tol):

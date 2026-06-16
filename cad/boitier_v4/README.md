@@ -24,13 +24,25 @@ contrôle, pas des pièces à imprimer.
 
 OpenSCAD **n'exporte pas le STEP** (géométrie maillée, pas de B-rep). Les `.step`
 fournis sont des **solides B-rep facettés** reconstruits depuis les STL via
-FreeCAD (`stl_to_step.py`). Ils sont valides et fermés (un solide chacun, sauf
-le joint = 2 solides), donc importables dans tout MCAD ou chez un fabricant.
+FreeCAD. Les trois sont **valides et fermés** (un solide chacun, sauf le joint
+= 2 solides), légers, importables dans tout MCAD ou chez un fabricant :
 
-> ⚠️ `v4_base.step` est volumineux (~22 Mo) : les grilles hexagonales génèrent
-> ~24 000 faces planes. `v4_top.step` (~3 Mo) et `v4_speaker_gasket.step`
-> (~2,4 Mo) sont légers. Pour ré-générer : `freecadcmd stl_to_step.py`.
-> Pour de l'édition paramétrique, **privilégier les `.scad`**.
+| STEP | État | Taille |
+|---|---|---|
+| `v4_base.step` | ✅ valide, fermé | ~2,5 Mo |
+| `v4_top.step` | ✅ valide, fermé | ~3,2 Mo |
+| `v4_speaker_gasket.step` | ✅ valide (2 solides) | ~2,4 Mo |
+
+> **Note bac** : le STEP du bac utilise des **ouvertures HP circulaires** (et un
+> `$fn` réduit) au lieu des grilles hexagonales — c'est ce qui le rend valide et
+> léger (2,5 Mo au lieu de 23 Mo). Les **grilles hexagonales restent dans le STL
+> d'impression et le `.scad`** (variable `grille_simple`). Pour l'impression,
+> utiliser les `.stl` / `.scad` ; le STEP sert de référence CAO / fabricant.
+>
+> Régénérer : capot+joint via `freecadcmd stl_to_step.py` ; bac via
+> `openscad -D grille_simple=true -D '$fn=48' -o v4_base_step.stl v4_base.scad`
+> puis `freecadcmd base_simple_to_step.py`. Pour de l'édition paramétrique,
+> **privilégier les `.scad`**.
 
 ## Caractéristiques
 

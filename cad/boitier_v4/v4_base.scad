@@ -36,12 +36,13 @@ module base() {
                     translate([sx*(usb_w-usb_h)/2,0,0])
                         cylinder(d=usb_h, h=wall+0.4);
 
-        // Grilles HP (face avant +Y)
+        // Grilles HP (face avant +Y) : hex pour l'impression, cercle pour le STEP
         for (sx = [-1,1])
             translate([sx*spk_spacing/2, outer_w/2 - wall - 0.01, spk_center_z])
                 rotate([-90,0,0])
                     linear_extrude(height = wall + 0.2)
-                        hex_grille(spk_cone, spk_grille_hole, spk_grille_gap);
+                        if (grille_simple) circle(d = spk_cone);
+                        else hex_grille(spk_cone, spk_grille_hole, spk_grille_gap);
 
         // Events de ventilation (fond)
         for (i = [0 : vent_count-1])
@@ -79,7 +80,8 @@ module base() {
             rotate([-90,0,0])
                 difference() {
                     cylinder(d = spk_outer + 4, h = 4.6);
-                    translate([0,0,-0.1]) cylinder(d = spk_cone, h = 4.8);
+                    // alesage > ouverture grille pour eviter les surfaces coincidentes
+                    translate([0,0,-0.1]) cylinder(d = spk_cone + 1.6, h = 4.8);
                     for (ang=[45,135,225,315])
                         rotate([0,0,ang])
                             translate([spk_bolt_circle/2,0,-0.1])

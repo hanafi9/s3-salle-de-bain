@@ -11,6 +11,11 @@
 
 $fn = 160;
 
+// Grilles HP : hexagonales pour l'impression (defaut) ;
+// passer a true (ex: -D grille_simple=true) -> ouverture circulaire simple,
+// utilise UNIQUEMENT pour generer un STEP propre/leger/valide.
+grille_simple = false;
+
 // --- Carte (PCB porteuse KiCad, apres rotation -90deg dans le boitier) ---
 pcb_l        = 108.03;  // dimension carte le long de X boitier (= 108 PCB)
 pcb_w        = 76.69;   // dimension carte le long de Y boitier (= 76.7 PCB)

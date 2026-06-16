@@ -54,3 +54,10 @@ kicad/build_schematic_svg.py
 kicad/report.txt
 kicad/build_pcb.py
 kicad/*-schema.svg
+
+# KiCad routing / DRC artifacts
+kicad/*.dsn
+kicad/*.ses
+kicad/*.rules
+kicad/temp-*
+kicad/*-drc.rpt

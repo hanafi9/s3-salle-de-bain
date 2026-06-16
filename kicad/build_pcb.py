@@ -148,6 +148,13 @@ COMPONENTS = [
      124, 66, 0, "HP-Left", {"1":"SPK_L+","2":"SPK_L-"}),
     ("HP2", "Connector_PinHeader_2.54mm", "PinHeader_1x02_P2.54mm_Vertical",
      124, 80, 0, "HP-Right", {"1":"SPK_R+","2":"SPK_R-"}),
+    # --- Trous de fixation M3 -> entretoises du boitier v4 -------------------
+    # 4 points valides SANS collision (find_mount_points.py), un par quadrant.
+    # Coords boitier (centrees) : [-65.5,47] [65.5,47] [31.5,-47] [-65.5,-47]
+    ("MK1", "MountingHole", "MountingHole_3.2mm_M3",   7,   7, 0, "M3", {}),
+    ("MK2", "MountingHole", "MountingHole_3.2mm_M3", 138,  44, 0, "M3", {}),
+    ("MK3", "MountingHole", "MountingHole_3.2mm_M3", 104, 101, 0, "M3", {}),
+    ("MK4", "MountingHole", "MountingHole_3.2mm_M3",   7, 101, 0, "M3", {}),
 ]
 
 BOARD_W, BOARD_H = 145, 108

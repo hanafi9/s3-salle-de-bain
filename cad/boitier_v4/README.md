@@ -11,11 +11,23 @@ haut-parleurs en façade, **dessus sans vis**.
 
 | Fichier | Rôle | Matière conseillée |
 |---|---|---|
-| `v4_base.stl` | Bac (parois, façade HP, USB-C, entretoises PCB) | PA-CF |
-| `v4_top.stl` | Capot (molette, anneau LED, micro, lèvre) | PA-CF |
-| `v4_speaker_gasket.stl` | 2 joints d'enceinte (compression) | TPU 95A |
+| `v4_base.stl` / `.step` | Bac (parois, façade HP, USB-C, entretoises PCB) | PA-CF |
+| `v4_top.stl` / `.step` | Capot (molette, anneau LED, micro, lèvre) | PA-CF |
+| `v4_speaker_gasket.stl` / `.step` | 2 joints d'enceinte (compression) | TPU 95A |
 
 Les `.scad` sont paramétriques : tout est piloté par **`params.scad`**.
+
+### Fichiers STEP (CAO / partage fabricant)
+
+OpenSCAD **n'exporte pas le STEP** (géométrie maillée, pas de B-rep). Les `.step`
+fournis sont des **solides B-rep facettés** reconstruits depuis les STL via
+FreeCAD (`stl_to_step.py`). Ils sont valides et fermés (un solide chacun, sauf
+le joint = 2 solides), donc importables dans tout MCAD ou chez un fabricant.
+
+> ⚠️ `v4_base.step` est volumineux (~22 Mo) : les grilles hexagonales génèrent
+> ~23 000 faces planes. `v4_top.step` (~3 Mo) et `v4_speaker_gasket.step`
+> (~2,4 Mo) sont légers. Pour ré-générer : `freecadcmd stl_to_step.py`.
+> Pour de l'édition paramétrique, **privilégier les `.scad`**.
 `v4_assembly.scad` (éclaté) et `v4_section.scad` (coupe) sont des vues de
 contrôle, pas des pièces à imprimer.
 

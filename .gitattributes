@@ -1,0 +1,9 @@
+# Fichiers CAO / binaires : pas de normalisation de fins de ligne
+*.step  -text
+*.stp   -text
+*.stl   -text
+*.3mf   -text
+*.png   -text
+*.kicad_pcb -text
+*.docx  -text
+*.pdf   -text

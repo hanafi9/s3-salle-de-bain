@@ -301,7 +301,7 @@
       "idf": "",
       "netlist": "",
       "plot": "",
-      "specctra_dsn": "",
+      "specctra_dsn": "s3-salle-de-bain.dsn",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -310,7 +310,13 @@
     "bus_aliases": {},
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
-    "top_level_sheets": []
+    "top_level_sheets": [
+      {
+        "filename": "s3-salle-de-bain.kicad_sch",
+        "name": "s3-salle-de-bain",
+        "uuid": "00000000-0000-0000-0000-000000000000"
+      }
+    ]
   },
   "sheets": [],
   "text_variables": {},

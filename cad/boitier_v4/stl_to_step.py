@@ -21,6 +21,12 @@ def to_solid(m, tol):
     sol = Part.makeSolid(sh)
     try: sol.fix(tol, tol, tol)
     except Exception: pass
+    try:                                   # fusionne les faces coplanaires
+        merged = sol.removeSplitter()       # -> fichier + leger, souvent valide
+        if merged.Solids: sol = merged
+    except Exception: pass
+    try: sol.fix(tol, tol, tol)
+    except Exception: pass
     return sol
 
 for name, vmin, vmax in PARTS:

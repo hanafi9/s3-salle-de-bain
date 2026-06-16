@@ -29,8 +29,8 @@ module base() {
         translate([0,0,floor_th])
             rounded_box(inner_l, inner_w, base_h, corner_r - wall);
 
-        // USB-C (face arriere -Y)
-        translate([0, -outer_w/2 - 0.1, usb_z])
+        // USB-C (paroi arriere -Y, decale en X pour tomber sur J2 reel)
+        translate([usb_x, -outer_w/2 - 0.1, usb_z])
             rotate([-90,0,0])
                 hull() for (sx=[-1,1])
                     translate([sx*(usb_w-usb_h)/2,0,0])
@@ -55,9 +55,9 @@ module base() {
             translate([sx*(outer_l/2 - foot_inset), sy*(outer_w/2 - foot_inset), -0.01])
                 cylinder(d=foot_d, h=foot_recess);
 
-        // Encoche de demontage (cote arriere, sous la levre)
-        translate([0, outer_w/2 - wall/2, base_h - 3])
-            cube([16, wall+1, 6], center=true);
+        // Encoche de demontage (paroi laterale -X, sous la levre)
+        translate([-outer_l/2 + wall/2, 0, base_h - 3])
+            cube([wall+1, 16, 6], center=true);
     }
 
     // =========================================================

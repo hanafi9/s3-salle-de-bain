@@ -14,7 +14,7 @@ grille_simple = false;   // true (STEP) -> ouvertures circulaires simples
 // --- Carte (PCB porteuse KiCad, rotation -90deg dans le boitier) ---
 pcb_l        = 108.03;
 pcb_w        = 76.69;
-pcb_clear    = 4;
+pcb_clear    = 8;       // agrandi : les entretoises/trous MK rentrent bien dans la cavite
 pcb_standoff = 6;
 pcb_hole_d   = 3.2;
 pcb_insert_d = 4.2;
@@ -112,14 +112,17 @@ module pebble_body(l, w, h, rc, fil) {
         sphere(r=fil, $fn=28);
     }
 }
-// Grille hexagonale sur zone circulaire (ouverture HP)
+// Grille hexagonale : UNIQUEMENT des hexagones entiers (bord net, sans sliver)
 module hex_grille(diam, hole_d, gap) {
+    R = diam/2 - hole_d/2;           // un hexagone entier doit tenir dans ce rayon
     rows = ceil(diam/gap)+2;
-    intersection() {
-        circle(d=diam);
-        for (iy=[-rows:rows]) {
-            yo = iy*gap*0.866; xo = (iy%2==0)?0:gap/2;
-            for (ix=[-rows:rows]) translate([ix*gap+xo, yo]) circle(d=hole_d, $fn=6);
+    for (iy=[-rows:rows]) {
+        yo = iy*gap*0.866;
+        xo = (iy%2==0) ? 0 : gap/2;
+        for (ix=[-rows:rows]) {
+            cx = ix*gap+xo; cy = yo;
+            if (cx*cx + cy*cy <= R*R)
+                translate([cx, cy]) circle(d=hole_d, $fn=6);
         }
     }
 }

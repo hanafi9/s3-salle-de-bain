@@ -26,7 +26,7 @@ Paramétrique : tout est piloté par **`params.scad`**.
 
 ## Caractéristiques
 
-- **Encombrement** : 121 × 90 × 69 mm — **carte** : 76,7 × 108 mm
+- **Encombrement** : 129 × 98 × 69 mm — **carte** : 76,7 × 108 mm
 - **Galet** : arêtes arrondies (fillet 12 mm), coins R36, **toutes faces adoucies**
 - **Paroi / fond** : 2,6 / 7,0 mm
 - **HP** : 4 × 40 mm (2 actifs façade + 2 radiateurs passifs arrière), z = 31 mm

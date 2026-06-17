@@ -2,12 +2,14 @@ S3 Salle de Bain - Voice Assistant Enclosure
 Par Hanafi BENMESBAH / domokami
 =============================================
 
->>> BOITIER COURANT : voir le dossier  boitier_v5/  <<<
-    Galet integral tres arrondi, 4 HP (2 actifs facade + 2 radiateurs
-    passifs arriere pour les basses), caisson etanche, carte 76,7 x 108 mm.
-    Projet OrcaSlicer pret a trancher : boitier_v5/boitier_v5.3mf
+>>> BOITIER COURANT : voir le dossier  boitier_v6/  <<<
+    Style JBL (plat & large), 4 HP : 2 actifs en facade + 2 radiateurs
+    passifs sur les bouts (logo DOMOKAMI) pour les basses. USB-C seul a
+    l'arriere (plus de chevauchement). Carte 76,7 x 108 mm.
+    Projet OrcaSlicer pret a trancher : boitier_v6/boitier_v6.3mf
 
-    boitier_v4/ : version precedente (galet rectangulaire, 2 HP) - conservee.
+    boitier_v5/ : galet integral (4 HP, radiateurs arriere) - conservee.
+    boitier_v4/ : galet rectangulaire (2 HP) - conservee.
 
 Les fichiers ci-dessous (housing_*, speaker_baffle, diffuser_ring) sont
 l'ANCIEN boitier cylindrique Ø110 mm, conserve en LEGACY.

@@ -2,14 +2,15 @@ S3 Salle de Bain - Voice Assistant Enclosure
 Par Hanafi BENMESBAH / domokami
 =============================================
 
->>> BOITIER COURANT : voir le dossier  boitier_v4/  <<<
-    Galet rectangulaire arrondi adapte a la carte porteuse 145 x 108 mm,
-    design classe & epure, HP front-firing, molette centree, PA-CF.
-    Projet OrcaSlicer pret a trancher : boitier_v4/boitier_v4.3mf
+>>> BOITIER COURANT : voir le dossier  boitier_v5/  <<<
+    Galet integral tres arrondi, 4 HP (2 actifs facade + 2 radiateurs
+    passifs arriere pour les basses), caisson etanche, carte 76,7 x 108 mm.
+    Projet OrcaSlicer pret a trancher : boitier_v5/boitier_v5.3mf
+
+    boitier_v4/ : version precedente (galet rectangulaire, 2 HP) - conservee.
 
 Les fichiers ci-dessous (housing_*, speaker_baffle, diffuser_ring) sont
-l'ANCIEN boitier cylindrique Ø110 mm, conserve en LEGACY : il ne loge pas
-la carte 145 x 108 mm. Utilisez boitier_v4/ pour une nouvelle impression.
+l'ANCIEN boitier cylindrique Ø110 mm, conserve en LEGACY.
 
 --- CONTENU (legacy, boitier cylindrique) ---
 

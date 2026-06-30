@@ -67,13 +67,13 @@ COMPONENTS = [
         "G":"GND",        # line-out ground
         "R":"AUDIO_R",    # line-out R
      }),
-    # --- Ampli EXTERNE 4 voies (LOTHYE 2x PAM8403) ---
-    # L'audio sort par le jack 3.5mm J1 (AUDIO_L/R) -> entree de l'ampli.
-    # Le PCB ne fournit que l'alim 5V (gated par Q2) a l'ampli externe.
-    # Les 4 HP se branchent directement sur l'ampli, plus de PAM8403 soude.
-    ("J3", "Connector_PinHeader_2.54mm", "PinHeader_1x02_P2.54mm_Vertical",
-     66, 64, 0, "AMP-5V", {
-        "1":"+5V_AMP", "2":"GND",   # alim de l'ampli externe 4 voies
+    # --- PAM8403 mini module (real board: BTL outputs L-/L+/R-/R-, no SHDN) ---
+    # Top: L OUT R ; bottom-left audio IN L G R ; bottom-right power + - (5V)
+    ("U3", "Modules", "PAM8403-mini",
+     66, 64, 0, "PAM8403", {
+        "L-":"SPK_L-","L+":"SPK_L+","R-":"SPK_R-","R+":"SPK_R+",  # BTL speaker out
+        "LI":"AUDIO_L","GI":"GND","RI":"AUDIO_R",                # audio in
+        "V+":"+5V_AMP","V-":"GND",                               # power (gated by Q2)
      }),
     # --- INMP441 round MEMS mic module (2x3: L/R WS SCK / SD VDD GND) ---
     ("U4", "Modules", "GY-INMP441",
@@ -143,7 +143,11 @@ COMPONENTS = [
     # --- Ferrite bead ---
     ("F1", "Inductor_SMD", "L_0805_2012Metric", 131, 12, 0, "Ferrite 600R",
         {"1":"+5V","2":"+5V_LED"}),
-    # (Les 4 HP ne sont plus connectes au PCB : ils vont sur l'ampli externe.)
+    # --- Speaker connectors (BTL differential : connect across +/- , NOT to GND) ---
+    ("HP1", "Connector_PinHeader_2.54mm", "PinHeader_1x02_P2.54mm_Vertical",
+     124, 66, 0, "HP-Left", {"1":"SPK_L+","2":"SPK_L-"}),
+    ("HP2", "Connector_PinHeader_2.54mm", "PinHeader_1x02_P2.54mm_Vertical",
+     124, 80, 0, "HP-Right", {"1":"SPK_R+","2":"SPK_R-"}),
     # --- Trous de fixation M3 -> entretoises du boitier v4 -------------------
     # 4 points valides SANS collision (find_mount_points.py), un par quadrant.
     # Coords boitier (centrees) : [-65.5,47] [65.5,47] [31.5,-47] [-65.5,-47]
